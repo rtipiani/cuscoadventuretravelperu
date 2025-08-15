@@ -1,0 +1,135 @@
+---
+type Lang = "es" | "en";
+
+const menuItems: Record<Lang, { label: string; href: string }[]> = {
+  es: [
+    { label: "Inicio", href: "/es/" },
+    { label: "Tours", href: "/es/tours" },
+    { label: "Nosotros", href: "/es/nosotros" },
+    { label: "Contacto", href: "/es/contacto" },
+  ],
+  en: [
+    { label: "Home", href: "/en/" },
+    { label: "Tours", href: "/en/tours" },
+    { label: "About Us", href: "/en/about" },
+    { label: "Contact", href: "/en/contact" },
+  ],
+};
+
+let currentLang: Lang = "es";
+const path = Astro.url.pathname;
+if (path.startsWith("/en")) currentLang = "en";
+else if (path.startsWith("/es")) currentLang = "es";
+
+// Calcula la URL alterna del mismo path cambiando /es <-> /en
+function computeLangToggleHref(p: string, lang: Lang) {
+  if (lang === "es") {
+    return p.startsWith("/es") ? p.replace(/^\/es/, "/en") : `/en${p}`;
+  } else {
+    return p.startsWith("/en") ? p.replace(/^\/en/, "/es") : `/es${p}`;
+  }
+}
+const langToggleHref = computeLangToggleHref(path, currentLang);
+---
+
+<nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href={menuItems[currentLang][0].href} class="flex items-center space-x-3 group">
+        <img src="/logo.png" alt="Cusco Travel Perú" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
+        <!-- <span class="text-xl font-extrabold text-amber-700 tracking-wide group-hover:text-amber-800">Cusco Travel</span> -->
+      </a>
+
+      <!-- Menú desktop -->
+      <div class="hidden md:flex items-center space-x-6">
+        {menuItems[currentLang].map((item) => (
+          <a
+            href={item.href}
+            class="relative text-gray-700 hover:text-amber-600 transition font-medium after:content-[''] after:block after:w-0 after:h-[2px] after:bg-amber-600 after:transition-all hover:after:w-full"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Acciones (desktop) -->
+      <div class="hidden md:flex items-center space-x-3">
+        <a
+          href={langToggleHref}
+          class="px-3 py-1 border border-amber-600 rounded-lg hover:bg-amber-600 hover:text-white transition flex items-center space-x-2 shadow-sm"
+        >
+          <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
+          <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
+        </a>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <button
+        id="menu-button"
+        type="button"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú móvil (oculto por defecto) -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 border-t border-gray-200 shadow-inner"
+  >
+    {menuItems[currentLang].map((item) => (
+      <a
+        href={item.href}
+        class="block text-gray-700 font-medium hover:text-amber-600 transition py-2 border-b border-gray-100"
+      >
+        {item.label}
+      </a>
+    ))}
+
+    <!-- Selector de idioma móvil -->
+    <a
+      href={langToggleHref}
+      class="mt-2 inline-flex w-max items-center space-x-2 px-3 py-1 border border-amber-600 rounded-lg hover:bg-amber-600 hover:text-white transition shadow-sm"
+    >
+      <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
+      <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
+    </a>
+  </div>
+</nav>
+
+<!-- JS del cliente (JS puro, sin TS, con null-checks) -->
+<script is:inline>
+  const btn = document.getElementById("menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (btn && mobileMenu) {
+    btn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.contains("hidden");
+      // Alterna visibilidad sin conflicto hidden/flex
+      mobileMenu.classList.toggle("hidden", !isHidden ? true : false);
+      mobileMenu.classList.toggle("flex", isHidden ? true : false);
+
+      // Accesibilidad
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+    });
+
+    // Cerrar el menú cuando se hace click en un enlace (opcional)
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>

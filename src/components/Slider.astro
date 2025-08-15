@@ -1,0 +1,75 @@
+---
+const slides = [
+  {
+    title: "Título Slide 1",
+    description: "Esta es la descripción del Slide 1. Explica el contenido de manera breve.",
+    color: "bg-red-500",
+    buttonText: "Acción 1",
+    buttonLink: "#"
+  },
+  {
+    title: "Título Slide 2",
+    description: "Descripción del Slide 2 para guiar al usuario hacia la acción.",
+    color: "bg-blue-500",
+    buttonText: "Acción 2",
+    buttonLink: "#"
+  },
+  {
+    title: "Título Slide 3",
+    description: "Aquí va la descripción del Slide 3 para motivar la interacción.",
+    color: "bg-green-500",
+    buttonText: "Acción 3",
+    buttonLink: "#"
+  }
+];
+---
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<div class="relative w-full h-screen overflow-hidden">
+  <!-- Slides -->
+  <div id="slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+    {slides.map((slide) => (
+      <div class={`flex-shrink-0 w-full h-full ${slide.color} relative flex items-center justify-center text-white`}>
+        <div class="text-center px-4">
+          <h2 class="text-5xl font-bold mb-4">{slide.title}</h2>
+          <p class="text-xl mb-6">{slide.description}</p>
+          <a href={slide.buttonLink} class={`bg-white text-black font-bold py-3 px-6 rounded hover:bg-gray-200 transition`}>
+            {slide.buttonText}
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Controles con círculos perfectos -->
+  <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-black/70 transition">
+    <i class="fas fa-chevron-left text-2xl"></i>
+  </button>
+  <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-black/70 transition">
+    <i class="fas fa-chevron-right text-2xl"></i>
+  </button>
+</div>
+
+<script type="module">
+  const slider = document.getElementById("slider");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+
+  if (slider && nextBtn && prevBtn) {
+    const totalSlides = slider.children.length;
+    let index = 0;
+
+    const goToSlide = (i) => {
+      index = (i + totalSlides) % totalSlides;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    nextBtn.addEventListener("click", () => goToSlide(index + 1));
+    prevBtn.addEventListener("click", () => goToSlide(index - 1));
+
+    // Auto-play cada 5 segundos
+    setInterval(() => goToSlide(index + 1), 5000);
+  }
+</script>
