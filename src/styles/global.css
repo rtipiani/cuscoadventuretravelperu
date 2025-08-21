@@ -1,10 +1,20 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap";
+
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
 .nav-scrolled {
   background-color: rgba(239, 231, 218, 0.9); /* #efe7da con 90% opacidad */
 }
 
 .primary {
-    color: #efe7da;
+  color: #efe7da;
+}
+
+.secondary {
+  color:  #19470c;
 }

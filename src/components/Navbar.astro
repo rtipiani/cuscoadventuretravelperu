@@ -4,15 +4,17 @@ type Lang = "es" | "en";
 const menuItems: Record<Lang, { label: string; href: string }[]> = {
     es: [
         { label: "Inicio", href: "/es/" },
-        { label: "Tours", href: "/es/tours" },
+        { label: "Paquetes Cusco / Machu Picchu", href: "/es/paquetes-cusco-machu-picchu" },
+        { label: "Destinos Perú", href: "/es/destinos-peru" },
         { label: "Nosotros", href: "/es/nosotros" },
-        { label: "Contacto", href: "/es/contacto" },
+        { label: "Contáctanos", href: "/es/contactanos" },
     ],
     en: [
         { label: "Home", href: "/en/" },
-        { label: "Tours", href: "/en/tours" },
-        { label: "About Us", href: "/en/about" },
-        { label: "Contact", href: "/en/contact" },
+        { label: "Cusco / Machu Picchu Packages", href: "/en/cusco-machu-picchu-packages" },
+        { label: "Peru Destinations", href: "/en/peru-destinations" },
+        { label: "About Us", href: "/en/about-us" },
+        { label: "Contact Us", href: "/en/contact-us" },
     ],
 };
 
@@ -36,18 +38,22 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
             </a>
 
             <!-- Menú desktop -->
-            <div class="hidden md:flex items-center space-x-6">
+            <div class="hidden md:flex items-center space-x-8">
                 {menuItems[currentLang].map(({ label, href }) => (
-                    <a href={href} class="nav-link relative hover:text-amber-500 transition font-medium after:content-[''] after:block after:w-0 after:h-[2px] after:bg-amber-500 after:transition-all hover:after:w-full">
+                    <a href={href} class="nav-link relative text-center hover:text-[#ff9800] transition font-medium after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#ff9800] after:transition-all hover:after:w-full">
                         {label}
                     </a>
                 ))}
             </div>
 
             <!-- Acciones (desktop) -->
-            <div class="hidden md:flex items-center space-x-3">
-                <a href={langToggleHref} class="nav-link px-3 py-1 border border-amber-500 rounded-lg hover:bg-amber-500 hover:text-white transition flex items-center space-x-2 shadow-sm">
-                    <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href={langToggleHref} class="nav-link px-3 py-1 border border-[#efe7da] rounded-lg hover:bg-[#ff9800] hover:text-white transition flex items-center space-x-2 shadow-sm">
+                    <img 
+                        src={currentLang === "es" ? "/flags/eu.avif" : "/flags/pe.avif"} 
+                        alt={currentLang === "es" ? "English" : "Español"} 
+                        class="h-5 w-5"
+                    />
                     <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
                 </a>
             </div>
@@ -63,15 +69,15 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 border-t border-gray-200 shadow-inner">
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-4 bg-white/95 border-t border-gray-200 shadow-inner text-center">
         {menuItems[currentLang].map(({ label, href }) => (
-            <a href={href} class="block text-gray-700 font-medium hover:text-amber-600 transition py-2 border-b border-gray-100">
+            <a href={href} class="block text-gray-700 font-medium hover:text-[#ff9800] transition py-2 border-b border-gray-100">
                 {label}
             </a>
         ))}
 
         <!-- Selector de idioma móvil -->
-        <a href={langToggleHref} class="mt-2 inline-flex w-max items-center space-x-2 px-3 py-1 border border-amber-600 rounded-lg hover:bg-amber-600 hover:text-white transition shadow-sm">
+        <a href={langToggleHref} class="mt-2 inline-flex w-max mx-auto items-center space-x-2 px-3 py-1 border border-amber-600 rounded-lg hover:bg-[#ff9800] hover:text-white transition shadow-sm">
             <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
             <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
         </a>
@@ -96,8 +102,9 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
 
         // Colores de texto de links y botones
         navLinks.forEach(link => {
-            link.classList.toggle("text-gray-900", scrolled);
+            link.classList.toggle("text-secondary", scrolled);
             link.classList.toggle("text-white", !scrolled);
+            link.classList.toggle("hover:text-[#19470c]", scrolled); // Asegura que el hover sea visible
         });
     }
 
