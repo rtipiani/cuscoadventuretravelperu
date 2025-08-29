@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const plan = {
+    titulo: "Lima 5D/4N",
+    imagen: "/bg-lima.png",
+};
+
+const itinerario = [
+    {
+        dia: "BIENVENIDA",
+        titulo: "¡Bienvenida a Lima!",
+        descripcion: [
+            `La agencia enviará un personal para poderle dar la bienvenida en el aeropuerto, posteriormente nos dirigiremos hacia el hotel, en el trayecto podrá hacer todas las consultas sobre sus tours, itinerarios y lugares principales para visitar por cuenta propia como primer día, así como también le haremos recomendaciones de lugares que podrá visitar por cuenta propia entre plazas, restaurantes, museos cercanos al Hotel.`,
+            `Nuestro transfer encargado de su recojo le brindará la documentación correspondiente para la realización de los tours, como ingresos que les servirán a partir del segundo día. La documentación podrá ser entregada de forma virtual o física.`
+        ],
+        incluye: ["Recojo en el Aeropuerto", "Trasporte hacia el Hotel", "Transfer (Agente encargada del recojo)", "Asistencia Permanente"],
+        noIncluye: ["Alimentos", "Gastos extras"],
+        imagen: "/lima/dia1.png",
+    },
+    {
+        dia: "DESCUBRIMIENTO LIMA + DESAYUNO",
+        descripcion: [
+            `Este día empezaremos con un Full Day, partiremos con el recojo en el Hotel para dirigirnos a visitar el primer punto denominado Huaca Pucllana donde podremos observar la cerámica y la arquitectura de la cultura Limeña, después pasaremos a conocer el palacio de Gobierno del Perú donde nos relataran datos importantes también tendremos un recorrido por el palacio Municipal, la catedral de lima y el convento de Lima que son principales atractivos conservados hasta la actualidad, durante todo el recorrido tendremos asistencia del Guía Profesional de Turismo ya sea para hacer consultas sobre los lugares a visitar así como también les podrá ayudar con las fotos y videos.`,
+            `Por la tarde visitaremos el Circuito Mágico de Agua donde podremos observar un poco de historia del Perú por medio del Agua, así como también representaciones de ciudades principales del Perú como Cusco, Arequipa, etc. Después de la visita nos desplazaremos a nuestro Hotel.`
+        ],
+        incluye: ["Desayuno (Continental, Americano o Buffet)", "Recojo en el Hotel", "Guía Profesional de Turismo", "Transporte hacia el Hotel al finalizado el Tour", "Ingresos a todos los lugares a visitar", "Transfer"],
+        noIncluye: ["Alimentos no mencionados", "Gastos Extras"],
+        imagen: "/lima/dia2.png",
+    },
+    {
+        dia: "CIUDAD DE LIMA + DESAYUNO",
+        descripcion: [
+            `Este día empezaremos después de haber desayunado en el Hotel, un personal de la agencia se apersonará a su Hotel para poderle trasladar para empezar  con el Tour (Full Day)`,
+            `Tendremos una visita al museo de Larco Herrera donde podremos observar arte precolombino que es parte importante de la Cultura Peruana junto al desarrollo de la historia peruana y su amplia colección de Cerámicas y artesanías + Folclore durante el día, para luego podernos desplazar a nuestros hoteles.`
+        ],
+        incluye: ["Desayuno (Continental, Americano o Buffet)", "Recojo en el Hotel", "Guía Profesional de Turismo", "Transporte hacia el Hotel al finalizado el Tour", "Ingresos a todos los lugares a visitar", "Transfer"],
+        noIncluye: ["Alimentos no mencionados", "Gastos Extras"],
+        imagen: "/lima/dia3.png",
+    },
+    {
+        dia: "PACHACAMAC + DESAYUNO",
+        descripcion: [
+            `Empezaremos el día con una excursión a las Ruinas Pachacamac donde conoceremos culturas importantes como Moche, Huari e Inca, así como su historia y sus creencias.`,
+            `El recorrido es completo y bastante cautivador exploraremos este complejo Religioso, donde podremos observar la Pirámide dedicados al culto del Sol y la Luna donde nuestro guía nos relatara las costumbres de la civilización Inca y la forma de rendir culto.`
+        ],
+        incluye: ["Desayuno (Continental, Americano o Buffet)", "Recojo en el Hotel", "Guía Profesional de Turismo", "Transporte hacia el Hotel al finalizado el Tour", "Ingresos a todos los lugares a visitar", "Transfer"],
+        noIncluye: ["Alimentos no mencionados", "Gastos Extras"],
+        imagen: "/lima/dia4.png",
+    },
+    {
+        dia: "DESPEDIDA + DESAYUNO",
+        descripcion: [
+            `Este último día tendremos tiempo para hacer últimos recorridos antes de nuestro traslado hacia el Aeropuerto y despedirnos.`
+        ],
+        incluye: ["Desayuno (Continental, Americano o Buffet)", "Traslado aeropuerto"],
+        noIncluye: ["Alimentos no mencionados", "Gastos Extras"],
+        imagen: "/lima/dia5.png",
+    },
+];
+---
+
+<Layout>
+    <!-- HERO -->
+    <section class="relative">
+        <div class="relative h-80 md:h-[420px] rounded-b-3xl overflow-hidden shadow-lg" style={`background-image: url('${plan.imagen}'); background-size: cover; background-position: center;`}>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
+
+            <!-- Contenido Hero -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">{plan.titulo}</h1>
+                <p class="mt-3 text-white/80 max-w-2xl">
+                    Descubre lo mejor de Lima en este paquete tradicional.
+                </p>
+                <div class="mt-6 flex gap-3">
+                    <a href="#itinerario" class="scroll-smooth bg-green-600 text-white px-6 py-3 rounded-xl shadow hover:bg-green-700 transition">
+                        Ver Itinerario
+                    </a>
+                    <a href={`https://wa.me/51987654321?text=${encodeURIComponent(`Hola, estoy interesado en reservar el paquete: ${plan.titulo}`)}`} target="_blank" rel="noopener noreferrer" class="bg-white/90 text-green-800 px-6 py-3 rounded-xl shadow hover:bg-white transition">
+                        Reservar ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario" class="py-16 bg-gradient-to-b from-gray-50 to-white scroll-mt-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-12 text-center">
+                Itinerario Completo
+            </h2>
+
+            <div class="space-y-6">
+                {itinerario.map((item, index) => (
+                    <details class="group bg-white shadow rounded-2xl overflow-hidden border border-gray-200 transition-all hover:shadow-xl" open={index === 0 ? true : undefined} data-accordion>
+                        <summary class="cursor-pointer flex justify-between items-center px-6 py-5 text-lg font-semibold text-gray-800 select-none hover:bg-gray-50 transition" aria-controls={`panel-${index}`}>
+                            <div class="flex items-center gap-3">
+                                <span class="bg-gray-100 text-black font-bold text-sm px-3 py-1 rounded-full">
+                                    Día {index + 1}
+                                </span>
+                                <span class="text-gray-800">{item.dia}</span>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+
+                        <!-- PANEL -->
+                        <div id={`panel-${index}`} class="accordion-panel px-6 pb-6 pt-4 border-t border-gray-100 bg-white/95">
+                            <!-- Imagen -->
+                            {item.imagen && (
+                                <img src={item.imagen} alt={item.titulo || item.dia} loading="lazy" class="w-full h-56 md:h-72 object-cover rounded-xl mb-6 shadow-sm" />
+                            )}
+
+                            {item.titulo && (
+                                <h3 class="text-xl font-semibold text-gray-700 mb-4">{item.titulo}</h3>
+                            )}
+
+                            <!-- Descripción -->
+                            <div class="space-y-4 text-gray-600 leading-relaxed">
+                                {item.descripcion.map((parrafo) => (
+                                    <p>{parrafo}</p>
+                                ))}
+                            </div>
+
+                            <!-- Incluye / No Incluye -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                                <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
+                                    <h4 class="font-semibold text-green-700 flex items-center gap-2 text-lg">
+                                        <span>✅</span> Incluye
+                                    </h4>
+                                    <ul class="mt-4 space-y-3">
+                                        {item.incluye.map((i) => (
+                                            <li class="flex items-start gap-3">
+                                                <span class="bg-green-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs mt-1">✓</span>
+                                                <span class="text-gray-700">{i}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
+                                    <h4 class="font-semibold text-red-700 flex items-center gap-2 text-lg">
+                                        <span>❌</span> No Incluye
+                                    </h4>
+                                    <ul class="mt-4 space-y-3">
+                                        {item.noIncluye.map((n) => (
+                                            <li class="flex items-start gap-3">
+                                                <span class="bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs mt-1">✗</span>
+                                                <span class="text-gray-700">{n}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <style>
+        details[data-accordion] .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 500ms ease, padding 400ms ease;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        details[data-accordion][open] .accordion-panel {
+            max-height: 3000px; /* más alto para que no corte contenido */
+            padding-top: 16px;
+            padding-bottom: 28px;
+        }
+
+        details[data-accordion] summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</Layout>

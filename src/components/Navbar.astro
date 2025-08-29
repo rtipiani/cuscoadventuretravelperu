@@ -1,18 +1,57 @@
 ---
 type Lang = "es" | "en";
 
-const menuItems: Record<Lang, { label: string; href: string }[]> = {
+interface MenuItem {
+    label: string;
+    href?: string;
+    children?: { label: string; href: string }[];
+}
+
+const menuItems: Record<Lang, MenuItem[]> = {
     es: [
-        { label: "Inicio", href: "/es/" },
-        { label: "Paquetes Cusco / Machu Picchu", href: "/es/paquetes-cusco-machu-picchu" },
-        { label: "Destinos Perú", href: "/es/destinos-peru" },
-        { label: "Nosotros", href: "/es/nosotros" },
+        { label: "Inicio", href: "/" },
+        {
+            label: "Paquetes Cusco / Machu Picchu",
+            children: [
+                { label: "Cusco Tradicional 3D/2N", href: "/es/paquetes/cusco-clasico" },
+                { label: "Cusco Sagrado 4D/3N", href: "/es/paquetes/valle-machu" },
+                { label: "Cusco Increíble 5D/4N", href: "/es/paquetes/aventura-cusco" },
+
+                { label: "Cusco Maravilloso 6D/5N", href: "/es/paquetes/aventura-cusco" },
+                { label: "Cusco Sorprendente 7D/6N", href: "/es/paquetes/aventura-cusco" },
+                { label: "Cusco Extraordinario 8D/7N", href: "/es/paquetes/aventura-cusco" },
+            ],
+        },
+        {
+            label: "Destinos Perú",
+            children: [
+                { label: "Lima", href: "/lima" },
+                { label: "Ica", href: "/es/destinos/ica" },
+                { label: "Arequipa", href: "/arequipa" },
+                { label: "Puno", href: "/es/destinos/puno" },
+            ],
+        },
+        { label: "Nosotros", href: "/nosotros" },
         { label: "Contáctanos", href: "/es/contactanos" },
     ],
     en: [
         { label: "Home", href: "/en/" },
-        { label: "Cusco / Machu Picchu Packages", href: "/en/cusco-machu-picchu-packages" },
-        { label: "Peru Destinations", href: "/en/peru-destinations" },
+        {
+            label: "Cusco / Machu Picchu Packages",
+            children: [
+                { label: "Classic Cusco 5D/4N", href: "/en/packages/classic-cusco" },
+                { label: "Sacred Valley + Machu Picchu", href: "/en/packages/valley-machu" },
+                { label: "Adventure in Cusco", href: "/en/packages/adventure-cusco" },
+            ],
+        },
+        {
+            label: "Peru Destinations",
+            children: [
+                { label: "Arequipa & Colca", href: "/en/destinations/arequipa-colca" },
+                { label: "Lake Titicaca", href: "/en/destinations/titicaca" },
+                { label: "Amazon", href: "/en/destinations/amazon" },
+            ],
+        },
         { label: "About Us", href: "/en/about-us" },
         { label: "Contact Us", href: "/en/contact-us" },
     ],
@@ -39,21 +78,31 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
 
             <!-- Menú desktop -->
             <div class="hidden md:flex items-center space-x-8">
-                {menuItems[currentLang].map(({ label, href }) => (
-                    <a href={href} class="nav-link relative text-center hover:text-[#ff9800] transition font-medium after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#ff9800] after:transition-all hover:after:w-full">
-                        {label}
-                    </a>
+                {menuItems[currentLang].map(({ label, href, children }) => ( children ? (
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1 font-semibold tracking-wide hover:text-[#ffc834] transition-all duration-300">
+                            <span>{label}</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+
+                        <div class="absolute left-0 mt-3 w-60 bg-black/80 backdrop-blur-lg rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-50">
+                            {children.map((sub) => (
+                                <a href={sub.href} class="block px-5 py-3 text-[#efe7da] font-medium hover:bg-gradient-to-r hover:from-[#efe7da]/20 hover:to-[#efe7da]/10 hover:text-white rounded-lg transition-all duration-200">
+                                    {sub.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>) : (
+                <a href={href} class="nav-link relative font-semibold tracking-wide hover:text-[#ff9800] transition-all duration-300 after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#ff9800] after:to-[#ff5722] after:rounded-full after:transition-all hover:after:w-full">
+                    {label}
+                </a>)
                 ))}
             </div>
 
             <!-- Acciones (desktop) -->
             <div class="hidden md:flex items-center space-x-4">
                 <a href={langToggleHref} class="nav-link px-3 py-1 border border-[#efe7da] rounded-lg hover:bg-[#ff9800] hover:text-white transition flex items-center space-x-2 shadow-sm">
-                    <img 
-                        src={currentLang === "es" ? "/flags/eu.avif" : "/flags/pe.avif"} 
-                        alt={currentLang === "es" ? "English" : "Español"} 
-                        class="h-5 w-5"
-                    />
+                    <img src={currentLang === "es" ? "/flags/eu.avif" : "/flags/pe.avif"} alt={currentLang === "es" ? "English" : "Español"} class="h-5 w-5"/>
                     <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
                 </a>
             </div>
@@ -69,17 +118,28 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-4 bg-white/95 border-t border-gray-200 shadow-inner text-center">
-        {menuItems[currentLang].map(({ label, href }) => (
-            <a href={href} class="block text-gray-700 font-medium hover:text-[#ff9800] transition py-2 border-b border-gray-100">
+    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-inner text-left">
+        {menuItems[currentLang].map(({ label, href, children }) => ( children ? (
+            <div class="border-b border-gray-200">
+                <button class="w-full flex justify-between items-center py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition-all duration-300" onclick="this.querySelector('i').classList.toggle('rotate-180'); this.nextElementSibling.classList.toggle('hidden')">
+                    <span>{label}</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="hidden flex-col pl-4 pb-2">
+                    {children.map((sub) => (
+                        <a href={sub.href} class="block py-2 text-gray-600 hover:text-[#ff9800] transition">{sub.label}</a>
+                    ))}
+                </div>
+            </div>) : (
+            <a href={href} class="block py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition border-b border-gray-200">
                 {label}
-            </a>
+            </a>)
         ))}
 
         <!-- Selector de idioma móvil -->
-        <a href={langToggleHref} class="mt-2 inline-flex w-max mx-auto items-center space-x-2 px-3 py-1 border border-amber-600 rounded-lg hover:bg-[#ff9800] hover:text-white transition shadow-sm">
+        <a href={langToggleHref} class="mt-3 inline-flex w-max mx-auto items-center space-x-2 px-4 py-2 border border-[#ff9800] rounded-lg hover:bg-[#ff9800] hover:text-white transition-all shadow-sm font-bold">
             <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
-            <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
+            <span>{currentLang === "es" ? "EN" : "ES"}</span>
         </a>
     </div>
 </nav>

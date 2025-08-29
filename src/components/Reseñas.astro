@@ -1,0 +1,198 @@
+---
+const reviewsCarouselData = [
+    {
+        titulo: "¡REGALO DE CUMPLEAÑOS!",
+        paquete: "CUSCO SAGRADO 4 DIAS / 3 NOCHES",
+        autor: "Carla Bazán",
+        fecha: "Mayo",
+        estrellas: 5,
+        descripcion: "Mi familia y yo estamos muy agradecidos con la agencia por el servicio de calidad brindado tal cual se nos indicaron...",
+        imagen: "/reseñas/review1.webp",
+        alt: "Una familia con Machupicchu de fondo",
+        link: "#"
+    },
+    {
+        titulo: "¡SERVICIO DE CALIDAD!",
+        paquete: "CUSCO EXTRAORDINARIO 7 DIAS / 6 NOCHES",
+        autor: "Juan Portilla",
+        fecha: "Junio",
+        estrellas: 5,
+        descripcion: "Recomendando al 100% la agencia, esta es mi segunda visita al Cusco y fue increíble en todos los sentidos...",
+        imagen: "/reseñas/review2.webp",
+        alt: "Selfie de una pareja con Machupicchu de fondo",
+        link: "#"
+    },
+    {
+        titulo: "¡VIAJE ENTRE AMIGOS!",
+        paquete: "CUSCO SORPRENDENTE 8 DIAS / 7 NOCHES",
+        autor: "Claudia Lozano",
+        fecha: "Abril",
+        estrellas: 5,
+        descripcion: "¡Excelente Servicio! Nuestro grupo tuvo una buena experiencia en toda la estadía en Cusco, cumplieron con...",
+        imagen: "/reseñas/review3.webp",
+        alt: "Selfie de un grupo con la roca sagrada de fondo",
+        link: "#"
+    },
+    {
+        titulo: "¡CON LOS MEJORES GUÍAS TURÍSTICOS!",
+        paquete: "CUSCO EXTRAORDINARIO 8 DIAS / 7 NOCHES",
+        autor: "Juan Mori",
+        fecha: "Diciembre",
+        estrellas: 5,
+        descripcion: "Estoy tan agradecida con la agencia por brindarme un viaje inolvidable, desde el primer día de mi llegada a Lima...",
+        imagen: "/reseñas/review4.webp",
+        alt: "Una familia con Machupicchu de fondo",
+        link: "#"
+    },
+    {
+        titulo: "¡CON LOS MEJORES GUÍAS TURÍSTICOS!",
+        paquete: "CUSCO MARAVILLOSO 5 DIAS / 4 NOCHES",
+        autor: "Jacquelin Cárdenas",
+        fecha: "Noviembre",
+        estrellas: 5,
+        descripcion: "Recomendando al 100% la agencia, esta es mi segunda visita al Cusco y fue increíble en todos los sentidos Muy agradecidos...",
+        imagen: "/reseñas/review5.webp",
+        alt: "Selfie de una pareja con Machupicchu de fondo",
+        link: "#"
+    },
+    {
+        titulo: "¡CON LOS MEJORES GUÍAS TURÍSTICOS!",
+        paquete: "CUSCO INCREIBLE 6 DIAS / 5 NOCHES",
+        autor: "Sandra Abarca",
+        fecha: "Octubre",
+        estrellas: 5,
+        descripcion: "Fuimos a la ciudad de Cusco durante 6 días y a Ica por 2 días con la esperanza de ver todos los increíbles ecosistemas del Perú...",
+        imagen: "/reseñas/review3.webp",
+        alt: "Selfie de un grupo con la roca sagrada de fondo",
+        link: "#"
+    }
+];
+---
+
+<section class="bg-white text-gray-800 py-16 px-6 md:px-12 max-w-7xl mx-auto space-y-12">
+  <h2 class="text-3xl md:text-4xl font-bold text-center text-[#19470c]">
+    Nuestras Experiencias
+  </h2>
+
+  <div class="relative overflow-hidden" data-reviews-carousel>
+    <!-- Track -->
+    <div
+      data-reviews-track
+      class="flex transition-transform duration-700 ease-in-out"
+      style="will-change: transform;"
+    >
+      {reviewsCarouselData.map((item) => (
+        <article
+          data-card-carousel
+          class="w-full md:w-1/3 flex-shrink-0 px-3"
+        >
+          <div class="bg-gray-50 rounded-2xl shadow-lg p-6 space-y-4 text-center">
+            <img
+              src={item.imagen}
+              alt={item.alt}
+              class="w-28 h-28 mx-auto rounded-full object-cover shadow-md"
+            />
+            <h4 class="text-lg font-semibold text-[#19470c]">{item.titulo}</h4>
+            <p class="text-sm text-gray-500">{item.paquete}</p>
+            <p class="text-gray-600">Por: {item.autor} ({item.fecha})</p>
+            <p class="text-yellow-500 text-lg">{"★".repeat(item.estrellas)}</p>
+            <p class="text-gray-700 text-sm">{item.descripcion}</p>
+            <a
+              href={item.link}
+              class="inline-block mt-4 px-5 py-2 rounded-full bg-[#19470c] text-white font-semibold shadow-md hover:bg-green-700 hover:shadow-lg transition-all duration-300"
+            >
+              Ver Testimonio
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Controles -->
+    <button
+      data-reviews-prev
+      class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#19470c]/70 text-white p-3 rounded-full shadow-lg hover:bg-[#19470c] transition hidden md:flex items-center justify-center backdrop-blur-sm"
+      aria-label="Anterior"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <button
+      data-reviews-next
+      class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#19470c]/70 text-white p-3 rounded-full shadow-lg hover:bg-[#19470c] transition hidden md:flex items-center justify-center backdrop-blur-sm"
+      aria-label="Siguiente"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Dots -->
+    <div data-reviews-dots class="flex justify-center mt-6 gap-2"></div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-reviews-carousel]').forEach(root => {
+      const track = root.querySelector('[data-reviews-track]');
+      const prev = root.querySelector('[data-reviews-prev]');
+      const next = root.querySelector('[data-reviews-next]');
+      const dotsContainer = root.querySelector('[data-reviews-dots]');
+      const cards = track.querySelectorAll('[data-card-carousel]');
+      const total = cards.length;
+
+      const visible = 3; // mostrar de 3 en 3
+      let index = 0;
+
+      // Crear dots
+      const pages = Math.ceil(total / visible);
+      const dots = [];
+      for (let i = 0; i < pages; i++) {
+        const dot = document.createElement('button');
+        dot.className = "w-3 h-3 rounded-full bg-gray-300 hover:bg-[#19470c] transition";
+        if (i === 0) dot.classList.add("bg-[#19470c]");
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+        dot.addEventListener('click', () => {
+          index = i;
+          update();
+          restartAuto();
+        });
+      }
+
+      const update = () => {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) =>
+          d.classList.toggle("bg-[#19470c]", i === index)
+        );
+      };
+
+      const scrollNext = () => {
+        index = (index + 1) % pages;
+        update();
+      };
+
+      const scrollPrev = () => {
+        index = (index - 1 + pages) % pages;
+        update();
+      };
+
+      prev?.addEventListener('click', () => { scrollPrev(); restartAuto(); });
+      next?.addEventListener('click', () => { scrollNext(); restartAuto(); });
+
+      // autoplay
+      let timer = null;
+      const startAuto = () => {
+        stopAuto();
+        timer = setInterval(scrollNext, 5000);
+      };
+      const stopAuto = () => timer && clearInterval(timer);
+      const restartAuto = () => { stopAuto(); startAuto(); };
+
+      root.addEventListener('mouseenter', stopAuto);
+      root.addEventListener('mouseleave', startAuto);
+
+      update();
+      startAuto();
+    });
+  });
+</script>
