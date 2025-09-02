@@ -22,6 +22,21 @@ const sobreNosotros = {
   ],
   imagen: "./slide-lago-titicaca.png"
 };
+
+const comoReservar = {
+  descripcion: `
+    Puede reservar un viaje con Cusco Adventure Travel Peru S.R.L. comunicándose con nosotros al número de WhatsApp o por llamada telefónica al (+51) 973291892 o por los correos electrónicos info@cuscoadventuretravelperu.com / reservascatravelperu@gmail.com. 
+    Cuando se comunique con nosotros, nos tomaremos el tiempo para personalizar su paquete turístico: destinos, presupuesto, preferencias hoteleras y gastronómicas, etc. Inmediatamente empezaremos a trabajar en el diseño de un itinerario especialmente diseñado para usted.
+    
+    Estaremos encantados de refinar y editar su itinerario hasta que esté completamente satisfecho. Una vez que recibamos su aprobación de su itinerario, le pediremos que haga un prepago por su viaje. Aceptar un itinerario nuestro constituye un acuerdo con los términos y condiciones.
+
+    Para pasar las mejores vacaciones de su vida no olvide que:
+    
+    - Debe contar con su respectivo Pasaporte, Célula de Identidad o DNI con al menos 6 meses de vigencia, para mayor información consulte inmigraciones de su país de origen.
+    - Si el viaje se realiza con menores de edad, debe portar de forma obligatoria la autorización de ambos padres para salir o ingresar al país, esta autorización tiene una vigencia de 90 días y debe entregarse a la autoridad migratoria peruana.
+  `,
+  imagen: "./vestimenta-de-los-incas.webp"
+};
 ---
 
 <section class="relative w-full min-h-[80vh] pt-16 md:pt-20">
@@ -60,3 +75,23 @@ const sobreNosotros = {
   </div>
 </section>
 
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 gap-12 items-center
+              md:grid-cols-1 lg:grid-cols-2">
+    <!-- Imagen -->
+    <div class="order-1 lg:order-1">
+      <img 
+        src={comoReservar.imagen} 
+        alt="Cómo Reservar" 
+        class="w-full max-h-[400px] md:max-h-[350px] lg:max-h-full rounded-2xl shadow-xl object-cover transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+
+    <!-- Texto -->
+    <div class="space-y-6 order-2 lg:order-2">
+      <p class="text-gray-700 text-sm sm:text-base md:text-base leading-relaxed whitespace-pre-line">
+        {comoReservar.descripcion}
+      </p>
+    </div>
+  </div>
+</section>
