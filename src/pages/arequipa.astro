@@ -141,12 +141,13 @@ const itinerario = [
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                                 <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
                                     <h4 class="font-semibold text-green-700 flex items-center gap-2 text-lg">
-                                        <span>✅</span> Incluye
+                                        <i class="fa-solid fa-circle-check text-green-600"></i>
+                                        Incluye
                                     </h4>
                                     <ul class="mt-4 space-y-3">
                                         {item.incluye.map((i) => (
                                             <li class="flex items-start gap-3">
-                                                <span class="bg-green-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs mt-1">✓</span>
+                                                <i class="fa-solid fa-check text-green-600 mt-1"></i>
                                                 <span class="text-gray-700">{i}</span>
                                             </li>
                                         ))}
@@ -155,12 +156,13 @@ const itinerario = [
 
                                 <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
                                     <h4 class="font-semibold text-red-700 flex items-center gap-2 text-lg">
-                                        <span>❌</span> No Incluye
+                                        <i class="fa-solid fa-circle-xmark text-red-600"></i>
+                                        No Incluye
                                     </h4>
                                     <ul class="mt-4 space-y-3">
                                         {item.noIncluye.map((n) => (
                                             <li class="flex items-start gap-3">
-                                                <span class="bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs mt-1">✗</span>
+                                                <i class="fa-solid fa-xmark text-red-600 mt-1"></i>
                                                 <span class="text-gray-700">{n}</span>
                                             </li>
                                         ))}
@@ -184,7 +186,7 @@ const itinerario = [
         }
 
         details[data-accordion][open] .accordion-panel {
-            max-height: 3000px; /* más alto para que no corte contenido */
+            max-height: 3000px; /* más alto para no cortar contenido */
             padding-top: 16px;
             padding-bottom: 28px;
         }

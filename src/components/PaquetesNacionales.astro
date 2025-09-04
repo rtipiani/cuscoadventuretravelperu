@@ -39,33 +39,41 @@ const paquetesNacionales = [
 ---
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Paquetes Vacacionales en Perú</h2>
-        <p class="text-base sm:text-lg text-gray-700 mb-12 leading-relaxed">
+        <!-- Título principal -->
+        <h2 class="font-extrabold text-gray-900 mb-6 text-[clamp(1.6rem,3vw,2rem)]">
+            Paquetes Vacacionales en Perú
+        </h2>
+        <p class="text-gray-700 mb-12 leading-relaxed text-[clamp(0.9rem,1.6vw,1rem)] max-w-3xl mx-auto">
             Quedarás sorprendido con la cultura peruana. Conoce los mejores destinos turísticos y vive experiencias inolvidables en cada rincón del país.
         </p>
 
         <!-- Grid de paquetes -->
         <div class="grid gap-6 sm:gap-8 md:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {paquetesNacionales.map((p) => {
-                // Creamos el link dinámico con mensaje personalizado
                 const whatsappLink = `https://wa.me/51973291892?text=Hola,%20quiero%20más%20información%20sobre%20el%20paquete%20${encodeURIComponent(p.titulo)}%20(${encodeURIComponent(p.dias)})`;
 
                 return (
                     <div class="relative bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition-transform transform hover:scale-105">
                         {p.etiqueta && (
-                            <span class="absolute top-4 left-4 bg-[#ffc834] text-[#19470c] text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+                            <span class="absolute top-4 left-4 bg-[#ffc834] text-[#19470c] text-[clamp(0.65rem,1.4vw,0.75rem)] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
                                 {p.etiqueta}
                             </span>
                         )}
                         <div>
-                            <img src={p.imagen} alt={p.titulo} class="w-full h-40 sm:h-48 object-cover rounded-md mb-5" />
-                            <p class="text-[2d751b] font-medium text-sm uppercase tracking-wide">{p.dias}</p>
-                            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mt-2">{p.titulo}</h3>
-                            <p class="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">{p.descripcion}</p>
+                            <img src={p.imagen} alt={p.titulo} class="w-full h-40 sm:h-48 object-cover rounded-md mb-5"/>
+                            <p class="text-[#2d751b] font-medium uppercase tracking-wide text-[clamp(0.7rem,1.5vw,0.8rem)]">
+                                {p.dias}
+                            </p>
+                            <h3 class="font-bold text-gray-800 mt-2 text-[clamp(1rem,2vw,1.2rem)]">
+                                {p.titulo}
+                            </h3>
+                            <p class="text-gray-600 mt-4 leading-relaxed text-[clamp(0.85rem,1.5vw,0.95rem)]">
+                                {p.descripcion}
+                            </p>
                         </div>
 
                         <div class="mt-6">
-                            <a href={whatsappLink} target="_blank" class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-4 sm:px-5 rounded-md font-medium text-sm sm:text-base hover:bg-[#64a323] transition">
+                            <a href={whatsappLink} target="_blank" class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-4 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
                                 <i class="fab fa-whatsapp mr-2"></i>
                                 Consultar Ahora
                             </a>

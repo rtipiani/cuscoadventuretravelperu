@@ -1,0 +1,90 @@
+---
+// Componente de Políticas de Privacidad con base legal peruana
+const privacidad = {
+    introduccion: `Cusco Travel Adventure Perú se compromete a proteger la privacidad de sus clientes, usuarios y visitantes, de conformidad con la Ley N.° 29733 – Ley de Protección de Datos Personales y su Reglamento, aprobado mediante el Decreto Supremo N.° 003-2013-JUS. Esta Política de Privacidad establece cómo recopilamos, utilizamos y protegemos su información personal.`,
+
+    secciones: [
+        {
+            titulo: "1. Responsable del Tratamiento de Datos",
+            contenido: `
+            Cusco Travel Adventure Perú, con domicilio en Cusco, Perú, es responsable del tratamiento de los datos personales proporcionados por los usuarios a través de nuestros canales de comunicación y plataformas digitales.`,
+        },
+        {
+            titulo: "2. Datos Personales Recopilados",
+            contenido: `
+            • Datos de identificación: nombres, apellidos, número de documento, nacionalidad.  
+            • Datos de contacto: correo electrónico, número de teléfono, dirección.  
+            • Datos de viaje: información de reservas, itinerarios y preferencias de servicio.  
+            • Datos financieros: información necesaria para procesar pagos.  
+            • Datos de navegación: cookies, dirección IP y patrones de uso del sitio web.`,
+        },
+        {
+            titulo: "3. Finalidad del Tratamiento",
+            contenido: `
+            • Gestionar reservas, pagos y servicios turísticos contratados.  
+            • Enviar confirmaciones, comunicaciones y actualizaciones relacionadas con los servicios.  
+            • Cumplir obligaciones legales, regulatorias y contractuales.  
+            • Atender consultas, reclamos y solicitudes de los usuarios.  
+            • Mejorar la calidad de nuestros servicios y la experiencia del cliente.`,
+        },
+        {
+            titulo: "4. Transferencia y Encargo de Datos",
+            contenido: `
+            Los datos personales podrán ser compartidos únicamente con:  
+            • Proveedores de servicios turísticos (hoteles, transporte, guías, etc.) en la medida necesaria para la prestación del servicio.  
+            • Autoridades competentes, cuando lo exija la ley o un mandato judicial.  
+            Cusco Travel Adventure Perú no comercializa, vende ni alquila datos personales a terceros.`,
+        },
+        {
+            titulo: "5. Derechos ARCO de los Usuarios",
+            contenido: `
+            Los titulares de los datos personales pueden ejercer en cualquier momento sus derechos de:  
+            • Acceso: conocer qué datos tenemos sobre usted.  
+            • Rectificación: corregir datos inexactos o incompletos.  
+            • Cancelación: solicitar la supresión de sus datos cuando corresponda.  
+            • Oposición: oponerse al tratamiento de sus datos por motivos legítimos.  
+
+            Para ejercer estos derechos, puede presentar una solicitud a través de nuestro correo electrónico oficial:  
+            info@cuscoadventuretravelperu.com`,
+        },
+        {
+            titulo: "6. Medidas de Seguridad",
+            contenido: `
+            Cusco Travel Adventure Perú adopta medidas técnicas, organizativas y legales para garantizar la seguridad y confidencialidad de los datos personales, evitando su alteración, pérdida, tratamiento o acceso no autorizado, en concordancia con la normativa vigente.`,
+        },
+        {
+            titulo: "7. Vigencia y Modificación de la Política",
+            contenido: `
+            Esta Política de Privacidad entra en vigencia a partir de su publicación en nuestro sitio web. Cusco Travel Adventure Perú se reserva el derecho de modificarla en cualquier momento, en cumplimiento de la Ley N.° 29733 y su Reglamento.`,
+        },
+    ],
+
+    compromiso: `Al utilizar nuestros servicios, usted manifiesta haber leído y comprendido la presente Política de Privacidad y otorga su consentimiento expreso para el tratamiento de sus datos personales conforme a lo dispuesto por la Ley N.° 29733 y el D.S. N.° 003-2013-JUS.`,
+    firma: "Cusco Adventure Travel Perú",
+};
+---
+
+<section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 lg:px-12">
+        {privacidad.secciones.map((sec) => (
+            <div class="mb-5">
+                <h2 class="text-lg md:text-xl font-semibold text-[#19470c] mb-1">
+                    {sec.titulo}
+                </h2>
+                <p class="text-gray-700 text-sm md:text-base whitespace-pre-line leading-snug mb-2">
+                    {sec.contenido}
+                </p>
+            </div>
+        ))}
+    </div>
+
+    <!-- Compromiso final -->
+    <div class="max-w-3xl mx-auto mt-8 p-6 bg-gray-50 border border-gray-300 rounded-xl shadow-md text-center">
+        <p class="text-gray-800 text-sm md:text-base leading-snug">
+            {privacidad.compromiso}
+        </p>
+        <p class="mt-2 font-semibold text-[#19470c] text-sm md:text-base">
+            {privacidad.firma}
+        </p>
+    </div>
+</section>

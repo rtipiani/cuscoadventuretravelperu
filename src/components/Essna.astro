@@ -27,30 +27,29 @@ const codigoEssna = {
 
 <section class="py-16 bg-white">
   	<!-- Título y subtítulo centrados -->
-  	<div class="max-w-3xl mx-auto text-center mb-12 px-4">
-    	<h1 class="font-bold text-[#19470c] mb-2 leading-snug text-[clamp(1.6rem,4vw,2.2rem)]">
+  	<div class="max-w-3xl mx-auto text-center mb-10 px-4">
+    	<h1 class="font-bold text-[#19470c] mb-2 leading-snug text-[clamp(1.2rem,2.2vw,1.5rem)]">
       		{codigoEssna.titulo}
     	</h1>
-    	<h2 class="font-medium text-gray-700 italic text-[clamp(1rem,2.5vw,1.25rem)]">
+    	<h2 class="font-medium text-gray-700 italic text-[clamp(0.9rem,1.8vw,1.05rem)]">
       		{codigoEssna.subtitulo}
     	</h2>
   	</div>
 
   	<!-- Contenido en dos columnas -->
-  	<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
+  	<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
     	<!-- Columna izquierda (texto) -->
-    	<div class="space-y-6">
-      		<p class="text-gray-700 leading-relaxed text-[clamp(0.95rem,2.2vw,1.125rem)]">
+    	<div class="space-y-5">
+      		<p class="text-gray-700 leading-relaxed text-[clamp(0.85rem,1.6vw,0.95rem)]">
         		{codigoEssna.descripcion}
       		</p>
 
       		<!-- Qué hacer -->
       		<div>
-        		<h3 class="font-semibold text-[#19470c] mt-6 mb-3 text-[clamp(1.25rem,3vw,1.5rem)]">
+        		<h3 class="font-semibold text-[#19470c] mt-5 mb-2 text-[clamp(1rem,2vw,1.2rem)]">
           			¿Qué podemos hacer para evitar este problema?
         		</h3>
-        		<ul class="list-disc pl-5 space-y-2 text-gray-700 text-[clamp(0.95rem,2.2vw,1.125rem)]">
+        		<ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-[clamp(0.85rem,1.6vw,0.95rem)]">
           			{codigoEssna.quehacer.map((item) => (
             			<li>{item}</li>
           			))}
@@ -59,10 +58,10 @@ const codigoEssna = {
 
       		<!-- Contactos -->
       		<div>
-        		<h3 class="font-semibold text-[#19470c] mt-6 mb-3 text-[clamp(1.25rem,3vw,1.5rem)]">
+        		<h3 class="font-semibold text-[#19470c] mt-5 mb-2 text-[clamp(1rem,2vw,1.2rem)]">
           			Contactos para Denuncias
         		</h3>
-        		<ul class="list-disc pl-5 space-y-2 text-gray-700 text-[clamp(0.95rem,2.2vw,1.125rem)]">
+        		<ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-[clamp(0.85rem,1.6vw,0.95rem)]">
           			{codigoEssna.contactos.map((contacto) => (
             			<li>{contacto}</li>
           			))}
@@ -73,18 +72,18 @@ const codigoEssna = {
     	<!-- Columna derecha (imagen) -->
     	<div class="flex justify-center lg:justify-end">
       		<div class="relative rounded-xl shadow-lg overflow-hidden w-full max-w-md">
-        		<img src={codigoEssna.imagen} alt="Código ESNNA" class="object-contain w-full h-auto max-h-[400px] sm:max-h-[500px] lg:max-h-[600px] transition-transform duration-500 hover:scale-105" />
+        		<img src={codigoEssna.imagen} alt="Código ESNNA" class="object-contain w-full h-auto max-h-[380px] sm:max-h-[480px] lg:max-h-[550px] transition-transform duration-500 hover:scale-105" />
         		<div class="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent pointer-events-none"></div>
       		</div>
     	</div>
   	</div>
 
   	<!-- Bloque de compromiso final centrado -->
-  	<div class="max-w-3xl mx-auto mt-12 p-6 bg-gray-50 border border-gray-300 rounded-xl shadow-md text-center px-4">
-    	<p class="text-gray-800 leading-relaxed text-[clamp(0.95rem,2.2vw,1.125rem)]">
+  	<div class="max-w-3xl mx-auto mt-10 p-6 bg-gray-50 border border-gray-300 rounded-xl shadow-md text-center px-4">
+    	<p class="text-gray-800 leading-relaxed text-[clamp(0.85rem,1.6vw,0.95rem)]">
       		{codigoEssna.compromiso}
     	</p>
-    	<p class="mt-3 font-semibold text-[#19470c] text-[clamp(0.95rem,2.2vw,1.125rem)]">
+    	<p class="mt-2 font-semibold text-[#19470c] text-[clamp(0.85rem,1.6vw,0.95rem)]">
       		{codigoEssna.firma}
     	</p>
   	</div>
