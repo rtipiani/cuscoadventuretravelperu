@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 const plan = {
-    titulo: "Cusco Extraordinario 8D/7N",
+    titulo: "Cusco Sorprendente 7D/6N",
     imagen: "/bg-machupicchu.png",
 };
 
@@ -44,7 +44,7 @@ const itinerario = [
         imagen: "/cusco/dia1.png"
     },
     {
-        dia: "TOUR VALLE SAGRADO DE LOS INCAS + MARAS Y MORAY",
+        dia: "VALLE VIP",
         descripcion: [
             `Comenzaremos nuestro Tour Valle Sagrado desde Cusco con el recojo en su hotel entre las 6:00 y 6:30 a.m., para iniciar una de las excursiones más completas y recomendadas antes de visitar Machu Picchu.`,
             `La primera parada será en Chinchero, un pueblo tradicional donde se conservan antiguos muros incas, una iglesia colonial llena de historia y un centro textil donde los pobladores aún elaboran sus tejidos en telar con técnicas ancestrales y fibras de alpaca.`,
@@ -75,7 +75,7 @@ const itinerario = [
         imagen: "/cusco/dia2.png"
     },
     {
-        dia: "TOUR A MACHU PICCHU DESDE CUSCO",
+        dia: "MACHU PICCHU",
         descripcion: [
             `El tercer día de nuestro itinerario está dedicado al destino más esperado por todo viajero: la Ciudadela Inca de Machu Picchu, una de las 7 Maravillas del Mundo Moderno.`,
             `Iniciaremos con el traslado desde Cusco hacia Ollantaytambo para abordar el tren turístico rumbo a Aguas Calientes (Machu Picchu Pueblo), disfrutando de un recorrido escénico rodeado de montañas y paisajes andinos.`,
@@ -557,7 +557,7 @@ const itinerario = [
 
             <div class="space-y-6">
                 {itinerario.map((item, index) => (
-                    <details class="group bg-white shadow rounded-2xl overflow-hidden border border-gray-200 transition-all hover:shadow-xl" open={index === 0 ? true : undefined} data-accordion>
+                    <details class="group bg-white shadow rounded-2xl overflow-hidden border border-gray-200 transition-all hover:shadow-xl"  open={index === 0 ? true : undefined} data-accordion>
                         <summary class="cursor-pointer flex justify-between items-center px-4 sm:px-6 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-800 select-none hover:bg-gray-50 transition">
                             <div class="flex items-center gap-2 sm:gap-3">
                                 <span class="bg-gray-100 text-black font-bold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full">
@@ -572,32 +572,22 @@ const itinerario = [
 
                         <div class="accordion-panel px-4 sm:px-6 pb-6 pt-4 border-t border-gray-100 bg-white/95 text-sm sm:text-base">
                             {item.imagen && (
-                                <img src={item.imagen} alt={item.titulo || item.dia} loading="lazy" class="w-full h-48 sm:h-56 md:h-72 object-cover rounded-xl mb-6 shadow-sm"/>
+                                <img src={item.imagen} alt={item.titulo || item.dia} loading="lazy" class="w-full h-48 sm:h-56 md:h-72 object-cover rounded-xl mb-6 shadow-sm" />
                             )}
-
+                    
                             {item.titulo && (
                                 <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">{item.titulo}</h3>
                             )}
 
                             <div class="space-y-4 text-gray-600 leading-relaxed">
-                                {/* 👇 Mostramos todo menos el último párrafo */}
-                                {item.descripcion.slice(0, -1).map((parrafo) => (
-                                    <p>{parrafo}</p>
-                                ))}
+                                {item.descripcion.map(parrafo => <p>{parrafo}</p>)}
 
                                 {item.atractivos && (
                                     <ul class="list-disc list-inside ml-4 mt-2 space-y-1 break-words">
-                                        {item.atractivos.map((a) => (
-                                            <li>
-                                                <strong>{a.nombre}:</strong> {a.descripcion}
-                                            </li>
+                                        {item.atractivos.map(a => (
+                                            <li><strong>{a.nombre}:</strong> {a.descripcion}</li>
                                         ))}
                                     </ul>
-                                )}
-
-                                {/* 👇 Mostramos el último párrafo al final */}
-                                {item.descripcion.length > 1 && (
-                                    <p>{item.descripcion[item.descripcion.length - 1]}</p>
                                 )}
                             </div>
 
@@ -609,7 +599,7 @@ const itinerario = [
                                     </h4>
 
                                     <ul class="mt-3 space-y-2 break-words">
-                                        {item.incluye.map((i) => (
+                                        {item.incluye.map(i => (
                                             <li class="flex items-start gap-2 text-sm sm:text-base">
                                                 <i class="fa-solid fa-check text-green-600 mt-1"></i>
                                                 <span class="text-gray-700">{i}</span>
@@ -625,7 +615,7 @@ const itinerario = [
                                     </h4>
 
                                     <ul class="mt-3 space-y-2 break-words">
-                                        {item.noIncluye.map((n) => (
+                                        {item.noIncluye.map(n => (
                                             <li class="flex items-start gap-2 text-sm sm:text-base">
                                                 <i class="fa-solid fa-xmark text-red-600 mt-1"></i>
                                                 <span class="text-gray-700">{n}</span>
@@ -643,7 +633,7 @@ const itinerario = [
                                     </h4>
 
                                     <ul class="mt-3 space-y-2 break-words">
-                                        {item.recomendaciones.map((rec) => (
+                                        {item.recomendaciones.map(rec => (
                                             <li class="flex items-start gap-2 text-sm sm:text-base">
                                                 <i class="fa-regular fa-circle-check text-yellow-500 mt-1"></i>
                                                 <span class="text-gray-700">{rec}</span>
