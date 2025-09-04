@@ -17,6 +17,7 @@ const itinerario = [
         ],
         atractivos: [
             { nombre: "Qoricancha (Templo del Sol)", descripcion: "principal centro religioso inca." },
+            { nombre: "Sacsayhuamán", descripcion: "majestuosa fortaleza con vista panorámica de la ciudad." },
             { nombre: "Qenqo", descripcion: "centro ceremonial dedicado a la Pachamama (Madre Tierra)." },
             { nombre: "Puka Pukara", descripcion: "antiguo centro militar y de control." },
             { nombre: "Tambomachay", descripcion: "conocido como el Templo del Agua, dedicado al culto al líquido vital." }
@@ -34,11 +35,11 @@ const itinerario = [
             "Gastos personales extras"
         ],
         recomendaciones: [
-            "Usar ropa cómoda y calzado adecuado para caminar",
-            "Llevar protector solar, gorra y agua",
-            "Acostúmbrese a la altitud tomando mate de coca y descansando tras el viaje",
-            "Tener listo su documento de identidad o pasaporte",
-            "Evitar comidas pesadas antes del tour para prevenir malestares por la altura"
+            "Mochila pequeña",
+            "Ropa abrigadora (según corresponda)",
+            "Aperitivos para el camino",
+            "Lentes de sol",
+            "Bloqueador solar"
         ],
         imagen: "/cusco/dia1.png"
     },
@@ -142,7 +143,7 @@ const itinerario = [
             `Descubre la mágica Laguna Humantay, una de las joyas naturales más visitadas de Cusco. Nuestro tour inicia muy temprano con el recojo en tu hotel (04:30 – 05:00 a.m.) para dirigirnos hacia Mollepata, donde disfrutaremos de un desayuno buffet.`,
             `Luego continuaremos hasta Soraypampa (3900 m.s.n.m.), punto de inicio de la caminata. El trekking de aproximadamente 1 hora y 30 minutos nos llevará hasta la impresionante Laguna Humantay (4200 m.s.n.m.), de aguas turquesa rodeada por imponentes glaciares de la Cordillera de los Andes. Después de la visita retornaremos a Mollepata para almorzar antes de regresar a Cusco.`
         ],
-        incluye: ["Transporte turístico ida y retorno", "Desayuno y almuerzo buffet", "Tickets de ingreso", "Tickets de ingreso", "Guía profesional bilingüe"],
+        incluye: ["Transporte turístico ida y retorno", "Desayuno y almuerzo buffet", "Tickets de ingreso", "Guía profesional bilingüe"],
         noIncluye: ["Renta de caballos", "Gastos personales"],
         recomendaciones: [
             "Pasaporte o DNI vigente",
@@ -247,6 +248,9 @@ const itinerario = [
                 <div class="p-6 text-gray-700 leading-relaxed space-y-4">
                     <p>
                         Descubre lo mejor del Cusco en un viaje pensado para viajeros que disponen de varios días y desean conocer a profundidad la cultura incaica.
+                    </p>
+                    <p>
+                        A lo largo de esta experiencia visitarás imponentes templos y fortalezas, recorrerás el Valle Sagrado, la majestuosa ciudadela de Machu Picchu, y disfrutarás de paisajes únicos como la Montaña de Colores y la Laguna Humantay. Además, conocerás rincones poco explorados como la Morada de los Dioses y el místico Valle Sur.
                     </p>
                     <p>
                         Un itinerario completo que combina historia, cultura y naturaleza para que tu estadía en Cusco se convierta en una experiencia inolvidable.
@@ -490,7 +494,7 @@ const itinerario = [
                         <!-- Día 6 -->
                         <div class="border border-gray-200 rounded-lg overflow-hidden">
                             <button class="w-full flex justify-between items-center p-4 bg-green-50 text-left font-medium text-gray-700" onclick="this.nextElementSibling.classList.toggle('hidden')">
-                                Día 6 - Valle Sur (Tipón – Pikillaqta – Andahuaylillas)
+                                Día 6 - Valle Sur
                                 <span class="text-green-600">+</span>
                             </button>
                             <div class="hidden p-4 text-sm text-gray-600 space-y-2">
@@ -546,17 +550,17 @@ const itinerario = [
 
     <!-- ITINERARIO -->
     <section id="itinerario" class="py-16 bg-gradient-to-b from-gray-50 to-white scroll-mt-12">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-12 text-center">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-900 mb-10 text-center">
                 Itinerario Completo
             </h2>
 
             <div class="space-y-6">
                 {itinerario.map((item, index) => (
-                    <details class="group bg-white shadow rounded-2xl overflow-hidden border border-gray-200 transition-all hover:shadow-xl" open={index === 0 ? true : undefined} data-accordion>
-                        <summary class="cursor-pointer flex justify-between items-center px-6 py-5 text-lg font-semibold text-gray-800 select-none hover:bg-gray-50 transition" aria-controls={`panel-${index}`}>
-                            <div class="flex items-center gap-3">
-                                <span class="bg-gray-100 text-black font-bold text-sm px-3 py-1 rounded-full">
+                    <details class="group bg-white shadow rounded-2xl overflow-hidden border border-gray-200 transition-all hover:shadow-xl"  open={index === 0 ? true : undefined} data-accordion>
+                        <summary class="cursor-pointer flex justify-between items-center px-4 sm:px-6 py-4 sm:py-5 text-base sm:text-lg font-semibold text-gray-800 select-none hover:bg-gray-50 transition">
+                            <div class="flex items-center gap-2 sm:gap-3">
+                                <span class="bg-gray-100 text-black font-bold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full">
                                     Día {index + 1}
                                 </span>
                                 <span class="text-gray-800">{item.dia}</span>
@@ -566,63 +570,54 @@ const itinerario = [
                             </svg>
                         </summary>
 
-                        <div id={`panel-${index}`} class="accordion-panel px-6 pb-6 pt-4 border-t border-gray-100 bg-white/95">
-                            {item.imagen && <img src={item.imagen} alt={item.titulo || item.dia} loading="lazy" class="w-full h-56 md:h-72 object-cover rounded-xl mb-6 shadow-sm" />}
-                            {item.titulo && <h3 class="text-xl font-semibold text-gray-700 mb-4">{item.titulo}</h3>}
+                        <div class="accordion-panel px-4 sm:px-6 pb-6 pt-4 border-t border-gray-100 bg-white/95 text-sm sm:text-base">
+                            {item.imagen && (
+                                <img src={item.imagen} alt={item.titulo || item.dia} loading="lazy" class="w-full h-48 sm:h-56 md:h-72 object-cover rounded-xl mb-6 shadow-sm" />
+                            )}
+                    
+                            {item.titulo && (
+                                <h3 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4">{item.titulo}</h3>
+                            )}
 
                             <div class="space-y-4 text-gray-600 leading-relaxed">
-                                {item.descripcion.map((parrafo, pIndex) => <p>{parrafo}</p>)}
+                                {item.descripcion.map(parrafo => <p>{parrafo}</p>)}
 
                                 {item.atractivos && (
-                                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1 break-words">
                                         {item.atractivos.map(a => (
                                             <li><strong>{a.nombre}:</strong> {a.descripcion}</li>
                                         ))}
                                     </ul>
                                 )}
-                                {item.circuitos && (
-                                    <div class="mt-4">
-                                        <h4 class="font-semibold text-green-800 text-lg mb-2">🏔️ Circuitos y Rutas Disponibles</h4>
-                                        {item.circuitos.map(c => (
-                                            <div class="mb-3">
-                                                <p class="font-semibold">{c.nombre}:</p>
-                                                <p class="mb-1 text-gray-700">{c.descripcion}</p>
-                                                <ul class="list-disc list-inside ml-4 text-gray-700">
-                                                    {c.rutas.map(ruta => <li>{ruta}</li>)}
-                                                </ul>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                                <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
-                                    <h4 class="font-semibold text-green-700 flex items-center gap-2 text-lg">
-                                        <span>✅</span> Incluye
+                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 mt-8">
+                                <div class="p-4 sm:p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
+                                    <h4 class="font-semibold text-green-700 flex items-center gap-2 text-base sm:text-lg">
+                                        <i class="fa-solid fa-circle-check text-green-600"></i>
+                                        Incluye
                                     </h4>
-                                    <ul class="mt-4 space-y-3">
+
+                                    <ul class="mt-3 space-y-2 break-words">
                                         {item.incluye.map(i => (
-                                            <li class="flex items-center gap-3">
-                                                <span class="flex-none w-6 h-6 rounded-full bg-green-600 flex items-center justify-center">
-                                                    <i class="fa-solid fa-check text-white text-[0.65rem] leading-none"></i>
-                                                </span>
+                                            <li class="flex items-start gap-2 text-sm sm:text-base">
+                                                <i class="fa-solid fa-check text-green-600 mt-1"></i>
                                                 <span class="text-gray-700">{i}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div class="p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
-                                    <h4 class="font-semibold text-red-700 flex items-center gap-2 text-lg">
-                                        <span>❌</span> No Incluye
+                                <div class="p-4 sm:p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100/60 shadow-sm">
+                                    <h4 class="font-semibold text-red-700 flex items-center gap-2 text-base sm:text-lg">
+                                        <i class="fa-solid fa-circle-xmark text-red-600"></i>
+                                        No Incluye
                                     </h4>
-                                    <ul class="mt-4 space-y-3">
+
+                                    <ul class="mt-3 space-y-2 break-words">
                                         {item.noIncluye.map(n => (
-                                            <li class="flex items-center gap-3">
-                                                <span class="flex-none w-6 h-6 rounded-full bg-red-600 flex items-center justify-center">
-                                                    <i class="fa-solid fa-xmark text-white text-[0.65rem] leading-none"></i>
-                                                </span>
+                                            <li class="flex items-start gap-2 text-sm sm:text-base">
+                                                <i class="fa-solid fa-xmark text-red-600 mt-1"></i>
                                                 <span class="text-gray-700">{n}</span>
                                             </li>
                                         ))}
@@ -631,12 +626,19 @@ const itinerario = [
                             </div>
 
                             {item.recomendaciones && (
-                                <div class="mt-8 p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-yellow-50 to-yellow-100/60 shadow-sm">
-                                    <h4 class="font-semibold text-yellow-800 flex items-center gap-2 text-lg mb-4">
-                                        <span>💡</span> Recomendaciones
+                                <div class="mt-8 p-4 sm:p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-yellow-50 to-yellow-100/60 shadow-sm">
+                                    <h4 class="font-semibold text-yellow-700 flex items-center gap-2 text-base sm:text-lg">
+                                        <i class="fa-solid fa-lightbulb text-yellow-500"></i>
+                                        Recomendaciones
                                     </h4>
-                                    <ul class="mt-2 space-y-2 list-disc list-inside text-gray-700">
-                                        {item.recomendaciones.map(rec => <li>{rec}</li>)}
+
+                                    <ul class="mt-3 space-y-2 break-words">
+                                        {item.recomendaciones.map(rec => (
+                                            <li class="flex items-start gap-2 text-sm sm:text-base">
+                                                <i class="fa-regular fa-circle-check text-yellow-500 mt-1"></i>
+                                                <span class="text-gray-700">{rec}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             )}
@@ -657,7 +659,7 @@ const itinerario = [
         }
 
         details[data-accordion][open] .accordion-panel {
-            max-height: 3000px; /* más alto para que no corte contenido */
+            max-height: 3000px;
             padding-top: 16px;
             padding-bottom: 28px;
         }

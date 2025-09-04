@@ -16,7 +16,6 @@ const menuItems: Record<Lang, MenuItem[]> = {
                 { label: "Cusco Tradicional 3D/2N", href: "/es/paquetes/cusco-clasico" },
                 { label: "Cusco Sagrado 4D/3N", href: "/es/paquetes/valle-machu" },
                 { label: "Cusco Increíble 5D/4N", href: "/es/paquetes/aventura-cusco" },
-
                 { label: "Cusco Maravilloso 6D/5N", href: "/es/paquetes/aventura-cusco" },
                 { label: "Cusco Sorprendente 7D/6N", href: "/es/paquetes/aventura-cusco" },
                 { label: "Cusco Extraordinario 8D/7N", href: "cusco-extraordinario-8d-7n" },
@@ -70,39 +69,50 @@ function computeLangToggleHref(p: string, lang: Lang) {
 const langToggleHref = computeLangToggleHref(path, currentLang);
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md border-b border-transparent shadow-sm z-50 transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md border-b border-transparent z-50 transition-colors duration-500 ease-in-out">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
+      
             <!-- Logo -->
-            <a href={menuItems[currentLang][0].href} class="flex items-center space-x-3 group">
-                <img src="/logo.png" alt="Cusco Travel Perú" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
+            <a href={menuItems[currentLang][0].href} class="flex items-center group">
+                <img src="/logo.png" alt="Cusco Adventure Travel Perú" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105"/>
+                <div class="flex flex-col justify-center leading-none ml-1 logo-text">
+                    <span class="font-bold text-lg sm:text-xl leading-none text-white group-hover:text-[#ff9800] transition-colors">
+                        Cusco Adventure
+                    </span>
+                    <span class="text-sm sm:text-base tracking-wide leading-none text-white group-hover:text-[#ff9800] transition-colors">
+                        Travel Perú
+                    </span>
+                </div>
             </a>
 
             <!-- Menú desktop -->
-            <div class="hidden md:flex items-center space-x-8">
-                {menuItems[currentLang].map(({ label, href, children }) => ( children ? (
-                    <div class="relative group">
-                        <button class="nav-link flex items-center space-x-1 font-semibold tracking-wide hover:text-[#ffc834] transition-all duration-300">
-                            <span>{label}</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </button>
-
-                        <div class="absolute left-0 mt-3 w-60 bg-black/80 backdrop-blur-lg rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-50">
-                            {children.map((sub) => (
-                                <a href={sub.href} class="block px-5 py-3 text-[#efe7da] font-medium hover:bg-gradient-to-r hover:from-[#efe7da]/20 hover:to-[#efe7da]/10 hover:text-white rounded-lg transition-all duration-200">
-                                    {sub.label}
-                                </a>
-                            ))}
+            <div class="hidden xl:flex items-center space-x-8">
+                {menuItems[currentLang].map(({ label, href, children }) => (
+                    children ? (
+                        <div class="relative group">
+                            <button class="nav-link flex items-center space-x-1 font-semibold tracking-wide hover:text-[#ffc834] transition-all duration-300">
+                                <span>{label}</span>
+                                <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                            </button>
+                            <div class="absolute left-0 mt-3 w-60 bg-black/80 backdrop-blur-lg rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-50">
+                                {children.map((sub) => (
+                                    <a href={sub.href} class="block px-5 py-3 text-[#efe7da] font-medium hover:bg-gradient-to-r hover:from-[#efe7da]/20 hover:to-[#efe7da]/10 hover:text-white rounded-lg transition-all duration-200">
+                                        {sub.label}
+                                    </a>
+                                ))}
+                            </div>
                         </div>
-                    </div>) : (
-                <a href={href} class="nav-link relative font-semibold tracking-wide hover:text-[#ff9800] transition-all duration-300 after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#ff9800] after:to-[#ff5722] after:rounded-full after:transition-all hover:after:w-full">
-                    {label}
-                </a>)
+                    ) : (
+                        <a href={href} class="nav-link relative font-semibold tracking-wide hover:text-[#ff9800] transition-all duration-300 after:content-[''] after:block after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#ff9800] after:to-[#ff5722] after:rounded-full after:transition-all hover:after:w-full">
+                            {label}
+                        </a>
+                    )
                 ))}
             </div>
 
             <!-- Acciones (desktop) -->
-            <div class="hidden md:flex items-center space-x-4">
+            <div class="hidden xl:flex items-center space-x-4">
                 <a href={langToggleHref} class="nav-link px-3 py-1 border border-[#efe7da] rounded-lg hover:bg-[#ff9800] hover:text-white transition flex items-center space-x-2 shadow-sm">
                     <img src={currentLang === "es" ? "/flags/eu.avif" : "/flags/pe.avif"} alt={currentLang === "es" ? "English" : "Español"} class="h-5 w-5"/>
                     <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
@@ -110,7 +120,7 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
             </div>
 
             <!-- Botón menú móvil -->
-            <button id="menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md nav-link hover:bg-gray-200 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+            <button id="menu-button" type="button" class="xl:hidden inline-flex items-center justify-center p-2 rounded-md nav-link hover:bg-gray-200 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -120,25 +130,28 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-inner text-left">
-        {menuItems[currentLang].map(({ label, href, children }) => ( children ? (
-            <div class="border-b border-gray-200">
-                <button class="w-full flex justify-between items-center py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition-all duration-300" onclick="this.querySelector('i').classList.toggle('rotate-180'); this.nextElementSibling.classList.toggle('hidden')">
-                    <span>{label}</span>
-                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                </button>
-                <div class="hidden flex-col pl-4 pb-2">
-                    {children.map((sub) => (
-                        <a href={sub.href} class="block py-2 text-gray-600 hover:text-[#ff9800] transition">{sub.label}</a>
-                    ))}
+    <div id="mobile-menu" class="hidden xl:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-inner text-left">
+        {menuItems[currentLang].map(({ label, href, children }) => (
+            children ? (
+                <div class="border-b border-gray-200">
+                    <button class="w-full flex justify-between items-center py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition-all duration-300" onclick="this.querySelector('i').classList.toggle('rotate-180'); this.nextElementSibling.classList.toggle('hidden')">
+                        <span>{label}</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden flex-col pl-4 pb-2">
+                        {children.map((sub) => (
+                            <a href={sub.href} class="block py-2 text-gray-600 hover:text-[#ff9800] transition">{sub.label}</a>
+                        ))}
+                    </div>
                 </div>
-            </div>) : (
-            <a href={href} class="block py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition border-b border-gray-200">
-                {label}
-            </a>)
+            ) : (
+                <a href={href} class="block py-3 font-semibold text-gray-700 hover:text-[#ff9800] transition border-b border-gray-200">
+                    {label}
+                </a>
+            )
         ))}
 
-        <!-- Selector de idioma móvil -->
+        <!-- Selector idioma móvil -->
         <a href={langToggleHref} class="mt-3 inline-flex w-max mx-auto items-center space-x-2 px-4 py-2 border border-[#ff9800] rounded-lg hover:bg-[#ff9800] hover:text-white transition-all shadow-sm font-bold">
             <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
             <span>{currentLang === "es" ? "EN" : "ES"}</span>
@@ -151,27 +164,32 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     const btn = document.getElementById("menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
     const navLinks = document.querySelectorAll(".nav-link");
+    const logoText = document.querySelectorAll(".logo-text span");
 
     function updateNavbar() {
         const scrolled = window.scrollY > 50;
 
-        // Fondo y borde del navbar
-        navbar.classList.toggle("nav-scrolled", scrolled); // Aplica la clase global
-        navbar.classList.toggle("border-gray-200", scrolled);
-        navbar.classList.toggle("shadow-md", scrolled);
-        navbar.classList.toggle("bg-transparent", !scrolled);
-        navbar.classList.toggle("border-transparent", !scrolled);
+        // Fondo
+        navbar.classList.toggle("nav-scrolled", scrolled);
 
-        // Colores de texto de links y botones
+        // Colores de links
         navLinks.forEach(link => {
-            link.classList.toggle("text-secondary", scrolled);
+            link.classList.toggle("text-gray-800", scrolled);
             link.classList.toggle("text-white", !scrolled);
-            link.classList.toggle("hover:text-[#19470c]", scrolled); // Asegura que el hover sea visible
+        });
+
+        // Colores del logo
+        logoText.forEach(span => {
+            span.classList.toggle("text-gray-800", scrolled);
+            span.classList.toggle("text-white", !scrolled);
         });
     }
 
+    // Detectar scroll
     window.addEventListener("scroll", updateNavbar);
-    window.addEventListener("load", updateNavbar); // asegura estado inicial
+
+    // Ejecutar al cargar (para aplicar estilos iniciales)
+    updateNavbar();
 
     // Menú móvil
     if (btn && mobileMenu) {
