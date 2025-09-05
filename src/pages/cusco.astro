@@ -1,157 +1,216 @@
----
-import Layout from "../layouts/Layout.astro";
-
-const plan = {
-    titulo: "Tours en Cusco",
-    subtitulo: "Explora experiencias únicas en la capital histórica del Imperio Inca",
-    imagen: "/bg-cusco.png", // aquí coloca tu fondo real
-};
-
-const paquetes = [
-    {
-        dias: "Full Day",
-        titulo: "CITY TOUR VIP",
-        descripcion: "Recorrido por Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara y Tambomachay.",
-        etiqueta: "OFERTA",
-        imagen: "./paquetes-cusco/qoricancha.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "VALLE SAGRADO MARAS + MORAY",
-        descripcion: "Explora las salineras de Maras y los impresionantes andenes circulares de Moray.",
-        etiqueta: "",
+--- 
+import Layout from "../layouts/Layout.astro"; 
+const plan = { 
+    titulo: "Tours en Cusco", 
+    subtitulo: "Explora experiencias únicas en la capital histórica del Imperio Inca", 
+    imagen: "/bg-cusco.png",
+}; 
+const paquetes = [ 
+    { 
+        dias: "Full Day", 
+        titulo: "CITY TOUR VIP", 
+        descripcion: "Recorrido por Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara y Tambomachay.", 
+        etiqueta: "OFERTA", 
+        imagen: "./paquetes-cusco/qoricancha.png", 
+        itinerario: 
+        { 
+            horarios: "HORARIOS: TURNOS MAÑANA DE 8:50 AM – 2PM , TURNOS TARDE DE 1 PM – 6:00PM", 
+            detalle: 
+            "Iniciaremos el recorrido con el recojo desde su hotel en Cusco, para luego visitar el Qoricancha o Templo del Sol. Luego continuaremos hacia Sacsayhuamán. Seguiremos hacia Qenqo y el Bosque de Qenqo. Más adelante visitaremos Puca Pucara y Tambomachay. Haremos una parada en una factoría de llamas y alpacas. Finalizaremos en el mirador del Cristo Blanco. Retorno al centro histórico cerca de la Plaza de Armas.", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico", "•	Ingresos a los atractivos turísticos (Boleto Turístico Parcial y entrada a Qoricancha)", "Asistencia durante el recorrido", ], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales", "Alimentación no mencionada"], 
+        }, 
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "VALLE SAGRADO MARAS + MORAY", 
+        descripcion: "Explora las salineras de Maras y los impresionantes andenes circulares de Moray.", 
+        etiqueta: "", 
         imagen: "./paquetes-cusco/valle-sagrado.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "VALLE SAGRADO TRADICIONAL",
-        descripcion: "Descubre Pisac, Ollantaytambo y Chinchero en un recorrido cultural por el Valle Sagrado.",
-        etiqueta: "MÁS VENDIDO",
+        itinerario: 
+        { 
+            horarios: "HORARIO: 6:40 AM A 07:00 PM", 
+            detalle: 
+            "Iniciaremos el recorrido con el recojo desde su hotel en Cusco, para luego visitar el Qoricancha o Templo del Sol, uno de los templos más importantes del imperio inca, donde la fusión de arquitectura inca y colonial sorprende a cada visitante. Luego continuaremos hacia la imponente fortaleza de Sacsayhuamán, famosa por sus gigantescos muros de piedra perfectamente ensamblados y escenario de la fiesta del Inti Raymi. Seguiremos hacia Qenqo, un centro ceremonial inca con túneles y altares tallados en roca, y después conoceremos el Bosque de Qenqo, un lugar místico rodeado de formaciones rocosas. Más adelante visitaremos Puca Pucara, fortaleza militar que servía como punto de control y resguardo, y el complejo de Tambomachay, conocido como los baños del Inca por sus fuentes de agua cristalina. En el trayecto también haremos una parada en una factoría de llamas y alpacas, donde aprenderemos sobre su crianza y el proceso de elaboración de tejidos andinos, y finalizaremos en el mirador del Cristo Blanco, desde donde se obtiene una vista panorámica espectacular de la ciudad del Cusco. Finalmente, retornaremos al centro histórico, cerca de la Plaza de Armas.", 
+            incluye: 
+            [ "Movilidad turística confortable", "Guía oficial de turismo profesional", "Ingresos a todos los atractivos turísticos mencionados", "Almuerzo buffet en Urubamba"], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales", "Alimentación no mencionada"], 
+        },
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "VALLE SAGRADO TRADICIONAL", 
+        descripcion: "Descubre Pisac, Ollantaytambo y Chinchero en un recorrido cultural por el Valle Sagrado.", 
+        etiqueta: "MÁS VENDIDO", 
         imagen: "./paquetes-cusco/pisac.png",
-    },
-    {
-        dias: "Medio Día",
-        titulo: "MARAS + MORAY",
-        descripcion: "Visita en medio día los icónicos andenes circulares de Moray y las salineras de Maras.",
-        etiqueta: "",
+        itinerario: 
+        { 
+            horarios: "HORARIO: 8:00 AM A 06:30 PM", 
+            detalle: 
+            "Iniciaremos con el recojo desde su hotel en Cusco, para dirigirnos hacia el tradicional Mercado de Corao, donde podrá apreciar artesanías, tejidos y productos locales. Continuaremos hacia el Mirador de Taray, desde donde se disfruta de una vista espectacular del Valle Sagrado y sus terrazas de cultivo. Nuestro recorrido sigue hacia el complejo arqueológico de Pisaq, famoso por sus andenes y templos incas en lo alto de la montaña. Luego visitaremos el pueblo de Pisaq, conocido por su colorido mercado artesanal, ideal para adquirir recuerdos. Posteriormente nos trasladaremos a Urubamba, donde disfrutaremos de un delicioso almuerzo buffet con los mejores sabores de la región. Por la tarde, visitaremos la impresionante fortaleza de Ollantaytambo, conocida como “la última ciudad inca viviente”, con sus templos, andenes y calles de piedra que aún conservan su esencia ancestral. Finalmente, retornaremos a la ciudad del Cusco, llegando cerca de la Plaza de Armas.", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico ida y vuelta", "Guía oficial de turismo", "Ingreso a los sitios arqueológicos (Boleto Turístico Parcial)", "Almuerzo buffet en Urubamba"], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales", "Bebidas en el almuerzo"], 
+        },
+    }, 
+    { 
+        dias: "Medio Día", 
+        titulo: "MARAS + MORAY", 
+        descripcion: "Visita en medio día los icónicos andenes circulares de Moray y las salineras de Maras.", 
+        etiqueta: "", 
         imagen: "./paquetes-cusco/maras-moray.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "MACHUPICCHU FULL DAY",
-        descripcion: "Visita guiada a Machupicchu en un solo día, con transporte y guía especializado.",
-        etiqueta: "MÁS VENDIDO",
+        itinerario: 
+        { 
+            horarios: "HORARIO: 8:30 AM A 02:30 PM", 
+            detalle: 
+            "Empezaremos con el recojo desde su hotel en Cusco para dirigirnos al pintoresco pueblo de Chinchero, conocido como la “tierra del arcoíris”. Aquí visitaremos un centro textil tradicional (Awana), donde las familias locales nos mostrarán las técnicas ancestrales de tejido y teñido con productos naturales, manteniendo viva la herencia de los incas. Continuaremos hacia el complejo agrícola de Moray, un sorprendente laboratorio inca compuesto por terrazas circulares que servían para experimentar con distintos microclimas y cultivos. Luego nos dirigiremos a las famosas Salineras de Maras, un impresionante conjunto de más de 3,000 pozos de sal, explotados artesanalmente desde tiempos preincaicos. El contraste del color blanco de los pozos con el paisaje montañoso lo convierte en un lugar perfecto para fotografías inolvidables. Finalmente, retornaremos a la ciudad de Cusco, llegando cerca de la Plaza de Armas.", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico ida y vuelta", "Guía oficial de turismo", "Boleto de ingreso a Moray (Boleto Turístico Parcial))", "Boleto de ingreso a Salineras de Maras"], 
+            noIncluye: 
+            [ "Compra de Souvenirs", "Alimentos"], 
+        },
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "MACHUPICCHU FULL DAY", 
+        descripcion: "Vive uno de los días más esperados de tu viaje: conocer la majestuosa ciudadela inca de Machu Picchu.", 
+        etiqueta: "MÁS VENDIDO", 
         imagen: "./paquetes-cusco/machu-picchu.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "MONTAÑA DE COLORES TREKKING",
-        descripcion: "Trekking a Vinicunca, la famosa montaña de siete colores.",
-        etiqueta: "MÁS VENDIDO",
+        itinerario: 
+        { 
+            horarios: "", 
+            detalle: 
+            "Nuestro tour comienza con el recojo desde tu hotel en Cusco según el horario de tren, para luego viajar a la estación de Ollantaytambo y disfrutar de un hermoso recorrido en tren (Expedition, Vistadome, Observatory) rodeado de paisajes andinos hasta llegar al poblado de Aguas Calientes. Desde aquí,  nuestro asistente te acompañara a tomar los buses de Consetur, en un trayecto de unos 30 minutos, que nos conducirá hasta la entrada del Santuario. Nuestro guía oficial de turismo estará esperando en la puerta de Machu Picchu para iniciar un recorrido guiado de aproximadamente 2 horas y media, explorando los templos, recintos ceremoniales, terrazas y miradores que hacen de esta maravilla del mundo un lugar único. Al finalizar el guiado, tendrás tiempo libre para recorrer por tu cuenta y tomar fotografías inolvidables. Luego retornaremos en bus hacia Aguas Calientes, donde podrás aprovechar tu tiempo visitando lugares como el Mariposario, el Museo de Machu Picchu, las cataratas de Mandor o relajarte en las famosas aguas termales. Además, no olvides pasear por las pintorescas calles del pueblo. ➡️ Importante: Te recomendamos reservar con anticipación, ya que el acceso a Machu Picchu está limitado y los boletos se agotan rápidamente. Existen 3 circuitos disponibles, por lo que es fundamental elegir el que más se acomode a tu interés para que disfrutes al máximo esta experiencia. Al final de la jornada, abordaremos nuevamente el tren de regreso y, desde Ollantaytambo, un transporte turístico lo llevará de vuelta a Cusco. Una experiencia inolvidable que quedará grabada para siempre en tu memoria viajera.", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico Cusco – Ollantaytambo – Cusco.", "Tickets de tren ida y vuelta.", "Tickets de bus Consetur (Aguas Calientes – Machu Picchu – Aguas Calientes).", "Entrada al Santuario de Machu Picchu.", "Tour guiado en Machu Picchu con guía profesional."], 
+            noIncluye: 
+            [ "Alimentación no mencionada.", "Entradas a Museo, Cataratas, Aguas Termales o Mariposario.", "Gastos personales y propinas."], 
+        },
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "MONTAÑA DE COLORES TREKKING", 
+        descripcion: "Trekking a Vinicunca, la famosa montaña de siete colores.", 
+        etiqueta: "MÁS VENDIDO", 
         imagen: "./paquetes-cusco/montana-colores.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "MONTAÑA DE COLORES EN CUATRIMOTOS",
-        descripcion: "Aventura hacia la Montaña de Colores combinando cuatrimotos y trekking.",
-        etiqueta: "",
+        itinerario: 
+        { 
+            horarios: "HORARIO: 4:30 AM A 05:00 PM", 
+            detalle: 
+            "Muy temprano, entre las 04:30 am, pasaremos por tu hotel en Cusco para iniciar la aventura hacia la famosa Montaña de 7 Colores – Vinicunca. Después de unas dos horas de viaje en bus turístico, llegaremos al poblado de Cusipata, donde nos espera un delicioso desayuno buffet que nos dará la energía necesaria para la caminata. Continuaremos una hora más en transporte hasta llegar al punto de inicio del trekking. Desde allí comenzaremos una caminata de 1 hora y 30 minutos aproximadamente, rodeados de impresionantes paisajes altoandinos, glaciares, manadas de llamas y alpacas que acompañan el camino. Al llegar a la cima, a más de 5,000 m.s.n.m., nos encontraremos con la maravillosa Montaña Arcoíris de Vinicunca, un espectáculo natural único que deslumbra por sus tonalidades rojizas, turquesas y doradas. Aquí, nuestro guía te contará la historia, geología y el significado cultural de este mágico lugar, además de darte el tiempo suficiente para tomar fotografías y disfrutar la experiencia. Luego iniciaremos el descenso para retornar a Cusipata, donde nos esperará un almuerzo buffet. Finalmente, emprenderemos el viaje de regreso a Cusco, llegando aproximadamente a las 17:00 pm.", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico ida y vuelta", "Desayuno y almuerzo buffet en Cusipata", "Guía profesional de turismo", "Ingreso a la Montaña", "Bastones de Trekking", "Balón de Oxigeno"], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales.", "Renta de Caballo o Moto Lineal"], 
+        },
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "MONTAÑA DE COLORES EN CUATRIMOTOS", 
+        descripcion: "Aventura hacia la Montaña de Colores combinando cuatrimotos y trekking.", 
+        etiqueta: "", 
         imagen: "./paquetes-cusco/montana-colores-cuatrimotos.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "LAGUNA HUMANTAY TREKKING",
-        descripcion: "Trekking a la majestuosa Laguna Humantay, rodeada de nevados.",
-        etiqueta: "MÁS VENDIDO",
+        itinerario: 
+        { 
+            horarios: "HORARIOS DE SALIDA: 3 AM, 4 AM, 6AM, 8:30AM Y 10 AM", 
+            detalle: 
+            "Comenzaremos muy temprano con el recojo desde tu hotel en Cusco para viajar en bus turístico durante unas 2 horas hasta el poblado de Cusipata, donde disfrutaremos de un energético desayuno buffet andino. Luego continuaremos hacia la base de las cuatrimotos, donde recibiremos una breve instrucción de seguridad y el equipo necesario (casco y guantes). Tendremos una práctica de 15 minutos y después inicia la parte más emocionante: el recorrido en cuatrimoto por unos 30 minutos a través de impresionantes paisajes altoandinos con montañas, valles y llamas, hasta llegar cerca del acceso a la Montaña de Colores. Desde allí realizaremos una corta caminata de 7 minutos hasta alcanzar los 5,000 m.s.n.m. en la cima de Vinicunca, donde admiraremos los sorprendentes tonos naturales de la montaña y capturaremos fotografías espectaculares. Al finalizar la visita, regresaremos en cuatrimoto a la base y luego en transporte hasta Cusipata, donde nos espera un delicioso almuerzo buffet. Finalmente retornaremos a Cusco alrededor de las 17:00 hrs, culminando una experiencia inolvidable de adrenalina y naturaleza", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico ida y vuelta", "Cuatrimoto individual o compartida", "Equipo de seguridad (casco, guantes)", "Instrucción y práctica de manejo.", "Desayuno y almuerzo buffet en Cusipata", "Guía profesional de turismo", "Ingreso a la Monataña", "Bastones de Trekking", "Balón de Oxigeno"], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales.", "Renta de Caballo o Moto Lineal"], 
+        },
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "LAGUNA HUMANTAY TREKKING", 
+        descripcion: "Trekking a la majestuosa Laguna Humantay, rodeada de nevados.", 
+        etiqueta: "MÁS VENDIDO", 
         imagen: "./paquetes-cusco/laguna-humantay-trekking.png",
-    },
-    {
-        dias: "Medio Día",
-        titulo: "TOUR MÍSTICO",
-        descripcion: "Ceremonias ancestrales y conexión espiritual con chamanes andinos.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/tour-mistico.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "VALLE SUR",
-        descripcion: "Visita Tipón, Pikillacta y Andahuaylillas en un recorrido cultural.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/tipon.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "BUS ESCÉNICO 180 GRADOS",
-        descripcion: "Viaja de Cusco a Puno en bus panorámico con paradas turísticas.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/bus-180-grados.png",
-    },
-    {
-        dias: "Medio Día",
-        titulo: "MORADA DE LOS DIOSES",
-        descripcion: "Esculturas monumentales en piedra que representan deidades andinas.",
-        etiqueta: "OFERTA",
-        imagen: "./paquetes-cusco/morada-de-los-dioses.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "MARAS Y MORAY EN CUATRIMOTOS",
-        descripcion: "Aventura en cuatrimotos hacia Moray y las salineras de Maras.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/maras-moray-cuatrimoto.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "PUENTE QESWACHACA",
-        descripcion: "Conoce el último puente colgante inca hecho de fibra vegetal.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/puente-qeswachaca.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "SIETE LAGUNAS DE AUSANGATE",
-        descripcion: "Trekking entre paisajes andinos y siete lagunas de distintos colores.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/7-lagunas-ausangate.png",
-    },
-    {
-        dias: "Full Day",
-        titulo: "WAQRAPUKARA",
-        descripcion: "Imponente sitio arqueológico inca en lo alto de un cañón.",
-        etiqueta: "",
-        imagen: "./paquetes-cusco/waqrapukara.png",
-    },
-];
----
-
+        itinerario: 
+        { 
+            horarios: "HORARIOS DE SALIDA: 3 AM, 4 AM, 6AM, 8:30AM Y 10 AM", 
+            detalle: 
+            "Comenzaremos muy temprano con el recojo desde tu hotel en Cusco para viajar en bus turístico durante unas 2 horas hasta el poblado de Cusipata, donde disfrutaremos de un energético desayuno buffet andino. Luego continuaremos hacia la base de las cuatrimotos, donde recibiremos una breve instrucción de seguridad y el equipo necesario (casco y guantes). Tendremos una práctica de 15 minutos y después inicia la parte más emocionante: el recorrido en cuatrimoto por unos 30 minutos a través de impresionantes paisajes altoandinos con montañas, valles y llamas, hasta llegar cerca del acceso a la Montaña de Colores. Desde allí realizaremos una corta caminata de 7 minutos hasta alcanzar los 5,000 m.s.n.m. en la cima de Vinicunca, donde admiraremos los sorprendentes tonos naturales de la montaña y capturaremos fotografías espectaculares. Al finalizar la visita, regresaremos en cuatrimoto a la base y luego en transporte hasta Cusipata, donde nos espera un delicioso almuerzo buffet. Finalmente retornaremos a Cusco alrededor de las 17:00 hrs, culminando una experiencia inolvidable de adrenalina y naturaleza", 
+            incluye: 
+            [ "Recojo desde hotel en Cusco", "Transporte turístico ida y vuelta", "Cuatrimoto individual o compartida", "Equipo de seguridad (casco, guantes)", "Instrucción y práctica de manejo.", "Desayuno y almuerzo buffet en Cusipata", "Guía profesional de turismo", "Ingreso a la Monataña", "Bastones de Trekking", "Balón de Oxigeno"], 
+            noIncluye: 
+            [ "Propinas", "Gastos personales.", "Renta de Caballo o Moto Lineal"], 
+        },
+    }, 
+    { 
+        dias: "Medio Día", 
+        titulo: "TOUR MÍSTICO", 
+        descripcion: "Ceremonias ancestrales y conexión espiritual con chamanes andinos.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/tour-mistico.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "VALLE SUR", 
+        descripcion: "Visita Tipón, Pikillacta y Andahuaylillas en un recorrido cultural.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/tipon.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "BUS ESCÉNICO 180 GRADOS", 
+        descripcion: "Viaja de Cusco a Puno en bus panorámico con paradas turísticas.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/bus-180-grados.png"
+    }, 
+    { 
+        dias: "Medio Día", 
+        titulo: "MORADA DE LOS DIOSES", 
+        descripcion: "Esculturas monumentales en piedra que representan deidades andinas.", 
+        etiqueta: "OFERTA", 
+        imagen: "./paquetes-cusco/morada-de-los-dioses.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "MARAS Y MORAY EN CUATRIMOTOS", 
+        descripcion: "Aventura en cuatrimotos hacia Moray y las salineras de Maras.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/maras-moray-cuatrimoto.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "PUENTE QESWACHACA", 
+        descripcion: "Conoce el último puente colgante inca hecho de fibra vegetal.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/puente-qeswachaca.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "SIETE LAGUNAS DE AUSANGATE", 
+        descripcion: "Trekking entre paisajes andinos y siete lagunas de distintos colores.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/7-lagunas-ausangate.png"
+    }, 
+    { 
+        dias: "Full Day", 
+        titulo: "WAQRAPUKARA", 
+        descripcion: "Imponente sitio arqueológico inca en lo alto de un cañón.", 
+        etiqueta: "", 
+        imagen: "./paquetes-cusco/waqrapukara.png"
+    }, 
+]; 
+--- 
 <Layout>
     <!-- HERO -->
     <section class="relative">
-        <div 
-            class="relative h-[90vh] md:h-[80vh] rounded-b-3xl overflow-hidden shadow-lg" 
-            style={`background-image: url('${plan.imagen}'); background-size: cover; background-position: center;`}
-        >
-            <!-- Overlay -->
+        <div class="relative h-[90vh] md:h-[80vh] rounded-b-3xl overflow-hidden shadow-lg" style={`background-image: url('${plan.imagen}'); background-size: cover; background-position: center;`}>
             <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
-
-            <!-- Contenido Hero -->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                <h1 class="font-extrabold text-white drop-shadow-lg leading-tight text-[clamp(1.8rem,4vw,3.2rem)]">
-                    {plan.titulo}
-                </h1>
-                <p class="mt-3 text-white/80 max-w-2xl text-[clamp(0.9rem,2vw,1.2rem)]">
-                    {plan.subtitulo}
-                </p>
-
+                <h1 class="font-extrabold text-white drop-shadow-lg text-[clamp(1.8rem,4vw,3.2rem)]">{plan.titulo}</h1>
+                <p class="mt-3 text-white/80 max-w-2xl text-[clamp(0.9rem,2vw,1.2rem)]">{plan.subtitulo}</p>
                 <div class="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                    <a href="#paquetes" class="w-full sm:w-auto bg-green-600 text-white px-6 py-3 rounded-xl shadow hover:bg-green-700 transition text-center">
-                        Ver Tours
-                    </a>
-                    <a 
-                        href={`https://wa.me/51973291892?text=${encodeURIComponent(`Hola, estoy interesado en los ${plan.titulo}`)}`} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="w-full sm:w-auto bg-white/90 text-green-800 px-6 py-3 rounded-xl shadow hover:bg-white transition text-center"
-                    >
+                    <a href="#paquetes" class="w-full sm:w-auto bg-green-600 text-white px-6 py-3 rounded-xl shadow hover:bg-green-700 transition">Ver Tours</a>
+                    <a href={`https://wa.me/51973291892?text=${encodeURIComponent(`Hola, estoy interesado en los ${plan.titulo}`)}`} target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white/90 text-green-800 px-6 py-3 rounded-xl shadow hover:bg-white transition">
                         Reservar ahora
                     </a>
                 </div>
@@ -160,54 +219,64 @@ const paquetes = [
     </section>
 
     <!-- GRID DE TOURS -->
-    <section class="py-20 bg-gray-100">
+    <section class="py-20 bg-gray-100" id="paquetes">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-            <!-- Título -->
-            <h2 class="font-extrabold text-gray-900 mb-6 text-[clamp(1.6rem,3vw,2rem)]">
-                Tours de Aventura, Cultura y Naturaleza en Cusco
-            </h2>
-
-            <!-- Subtítulo -->
-            <p class="text-gray-700 mb-12 leading-relaxed text-[clamp(0.9rem,1.6vw,1rem)] max-w-3xl mx-auto">
+            <h2 class="font-extrabold text-gray-900 mb-6 text-[clamp(1.6rem,3vw,2rem)]">Tours de Aventura, Cultura y Naturaleza en Cusco</h2>
+            <p class="text-gray-700 mb-12 max-w-3xl mx-auto">
                 Elige entre experiencias únicas que combinan historia, arqueología, paisajes andinos y vivencias espirituales.  
                 Encuentra el tour perfecto para ti en Cusco.
             </p>
 
-            <!-- Grid -->
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {paquetes.map((p) => {
-                    const whatsappLink = `https://wa.me/51973291892?text=Hola,%20quiero%20más%20información%20sobre%20el%20tour%20${encodeURIComponent(p.titulo)}%20(${encodeURIComponent(p.dias)})`;
+  {paquetes.map(p => {
+    const whatsappLink = `https://wa.me/51973291892?text=Hola,%20quiero%20más%20información%20sobre%20el%20tour%20${encodeURIComponent(p.titulo)}%20(${encodeURIComponent(p.dias)})`;
+    return (
+      <div class="relative bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition self-start">
+        {p.etiqueta && (
+          <span class="absolute top-4 left-4 bg-[#ffc834] text-[#19470c] text-sm font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+            {p.etiqueta}
+          </span>
+        )}
+        <img src={p.imagen} alt={p.titulo} class="w-full h-44 sm:h-48 object-cover rounded-md mb-5"/>
+        <p class="text-[#2d751b] font-medium uppercase tracking-wide text-sm">{p.dias}</p>
+        <h3 class="font-bold text-gray-800 mt-2">{p.titulo}</h3>
+        <p class="text-gray-600 mt-4">{p.descripcion}</p>
 
-                    return (
-                        <div class="relative bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition-transform transform hover:scale-105">
-                            {p.etiqueta && (
-                                <span class="absolute top-4 left-4 bg-[#ffc834] text-[#19470c] text-[clamp(0.65rem,1.4vw,0.75rem)] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
-                                    {p.etiqueta}
-                                </span>
-                            )}
-                            <div>
-                                <img src={p.imagen} alt={p.titulo} class="w-full h-44 sm:h-48 object-cover rounded-md mb-5"/>
-                                <p class="text-[#2d751b] font-medium uppercase tracking-wide text-[clamp(0.7rem,1.5vw,0.8rem)]">
-                                    {p.dias}
-                                </p>
-                                <h3 class="font-bold text-gray-800 mt-2 text-[clamp(1rem,2vw,1.2rem)]">
-                                    {p.titulo}
-                                </h3>
-                                <p class="text-gray-600 mt-4 leading-relaxed text-[clamp(0.85rem,1.5vw,0.95rem)]">
-                                    {p.descripcion}
-                                </p>
-                            </div>
+        <a href={whatsappLink} target="_blank" class="mt-4 inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-5 rounded-md font-medium hover:bg-[#64a323] transition">
+          Consultar Ahora
+        </a>
 
-                            <div class="mt-6">
-                                <a href={whatsappLink} target="_blank" class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-5 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
-                                    <i class="fab fa-whatsapp mr-2"></i>
-                                    Consultar Ahora
-                                </a>
-                            </div>
-                        </div>
-                    );
-                })}
+        {/* Collapse del Itinerario */}
+        {p.itinerario && (
+          <div class="mt-4">
+            <button 
+              class="w-full text-center bg-green-800 text-white py-2 px-4 rounded-md hover:bg-green-700 transition"
+              onclick="
+                const all = document.querySelectorAll('.itinerario-content');
+                all.forEach(el => el.classList.add('hidden'));
+                this.nextElementSibling.classList.toggle('hidden');
+              "
+            >
+              Ver Itinerario
+            </button>
+            <div class="itinerario-content hidden mt-2 bg-gray-50 p-4 rounded-md text-gray-700 text-sm">
+              <p class="font-semibold">{p.itinerario.horarios}</p>
+              <p class="mt-2 whitespace-pre-line">{p.itinerario.detalle}</p>
+              <h4 class="mt-2 font-semibold">Incluye:</h4>
+              <ul class="list-disc list-inside">
+                {p.itinerario.incluye.map(i => <li>{i}</li>)}
+              </ul>
+              <h4 class="mt-2 font-semibold">No Incluye:</h4>
+              <ul class="list-disc list-inside">
+                {p.itinerario.noIncluye.map(i => <li>{i}</li>)}
+              </ul>
             </div>
+          </div>
+        )}
+      </div>
+    );
+  })}
+</div>
         </div>
     </section>
 </Layout>
