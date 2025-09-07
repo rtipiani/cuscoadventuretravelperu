@@ -1,192 +1,218 @@
-// src/data/paquetes-ica.ts
+// src/data/paquetes-arequipa.ts
 
 export interface Itinerario {
-    horarios: string;
-    detalle: string[];
-    incluye: string[];
-    noIncluye: string[];
+  horarios: string;
+  detalle: string[];
+  incluye: string[];
+  noIncluye: string[];
 }
 
 export interface Paquete {
-     dias: string;
-    titulo: string;
-    slug: string;
-    descripcion: string;
-    etiqueta: string;
-    imagen: string;
-    itinerario?: Itinerario;
+  dias: string;
+  titulo: string;
+  slug: string;
+  descripcion: string;
+  etiqueta: string;
+  imagen: string;
+  itinerario?: Itinerario;
 }
 
 export const paquetes: Paquete[] = [
-    {
-        dias: "Full Day",
-        titulo: "Paracas + Huacachina Full Day",
-        slug: "paracas-huacachina-full-day",
-        descripcion:
-            "Visita Paracas con sus Islas Ballestas, disfruta de un viñedo en Ica con degustación, el oasis de Huacachina y la experiencia de tubulares y sandboarding.",
-        etiqueta: "OFERTA",
-        imagen: "/paquetes-ica/paracas-huacachina.avif",
-        itinerario: {
-            horarios: "HORARIO: DE 4:30 AM – 9:20 PM",
-            detalle: [
-                "LIMA – PARACAS: Tomamos la carretera al sur, presentación de la guía, parada para desayuno en ruta.",
-                "9:00 AM PARACAS – ISLAS BALLESTAS: Paseo en modernas embarcaciones con chaleco salvavidas. Se aprecia El Candelabro, aves guaneras, lobos marinos y pingüinos de Humboldt.",
-                "1:00 PM ALMUERZO – VIÑEDO EN ICA: Recorrido, proceso de vinos y piscos, degustación de Borgoña, Vino de Misa, Amacerados y Pisco.",
-                "3:00 PM OASIS HUACACHINA: Oasis natural rodeado de dunas, palmeras y algarrobos.",
-                "TUBULARES Y SANDBOARDING: Aventura en carros areneros y tabla en arena.",
-                "BODEGA RACIMO DE UVA O EL GARRAFÓN – CHINCHA: Show de música, vinos, amacerados, frejol colado y galleta paciencia."
-            ],
-            incluye: [
-                "Movilidad turística Lima - Paracas - Ica – Chincha - Lima.",
-                "Seguro contra accidentes (Soat).",
-                "Guía oficial de turismo.",
-                "Embarcación a las Islas Ballestas.",
-                "Chalecos salvavidas durante el recorrido.",
-                "Observación de fauna marina.",
-                "Visita al viñedo en Ica.",
-                "Degustación de vinos y piscos.",
-                "Visita al oasis de la Huacachina.",
-                "Degustación de tejas y chocotejas.",
-                "Visita al viñedo Racimo de Uva con show de música."
-            ],
-            noIncluye: ["Propinas.", "Gastos personales.", "Alimentación."]
-        }
-    },
-    {
-        dias: "2D/1N",
-        titulo: "Paracas + Huacachina 2D/1N",
-        slug: "paracas-huacachina-2d1n",
-        descripcion:
-            "Disfruta de Paracas, las Islas Ballestas, un viñedo en Ica, el oasis de Huacachina con tubulares y sandboarding, más una noche de hotel en Ica.",
-        etiqueta: "",
-        imagen: "/paquetes-ica/paracas-huacachina-2d1n.avif",
-        itinerario: {
-            horarios: "Horario de salida: 4:30 AM",
-            detalle: [
-                "DÍA 1 – PARACAS + HUACACHINA",
-                "4:30 AM LIMA – PARACAS: Carretera al sur, desayuno en ruta.",
-                "9:00 AM PARACAS – ISLAS BALLESTAS: Paseo en embarcación con fauna marina.",
-                "1:00 PM VIÑEDO EN ICA: Recorrido y degustación de vinos y piscos.",
-                "3:00 PM OASIS HUACACHINA: Descanso y deportes de aventura en dunas.",
-                "Noche en hotel en Ica.",
-                "DÍA 2 – DÍA LIBRE",
-                "Desayuno en hotel. Mañana libre. Almuerzo por cuenta del pasajero.",
-                "Visita a Bodega Racimo de Uva o El Garrafón en Chincha con show y degustación."
-            ],
-            incluye: [
-                "Movilidad turística Lima - Paracas - Ica – Chincha - Lima.",
-                "Seguro contra accidentes (Soat).",
-                "Guía oficial de turismo.",
-                "Embarcación a las Islas Ballestas.",
-                "Visita a viñedo en Ica.",
-                "Degustación de vinos, amacerados y piscos.",
-                "Visita al oasis Huacachina.",
-                "Tubulares y Sandboarding.",
-                "Ingresos a Muelle Turístico en Paracas y Huacachina.",
-                "Degustación de tejas y chocotejas.",
-                "1 Noche de hotel en Ica con desayuno.",
-                "Visita a Bodega Racimo de Uva con show."
-            ],
-            noIncluye: ["Propinas.", "Gastos personales.", "Alimentación."]
-        }
-    },
-    {
-        dias: "Full Day",
-        titulo: "Nazca – Semiprivado",
-        slug: "nazca-full-day",
-        descripcion:
-            "Sobrevuela las Líneas de Nazca y descubre el misterio de sus geoglifos, además disfruta del oasis de Huacachina y deportes de aventura.",
-        etiqueta: "RECOMENDADO",
-        imagen: "/paquetes-ica/nazca.avif",
-        itinerario: {
-            horarios: "HORARIO: 3:30 AM – 10:00 PM",
-            detalle: [
-                "LIMA – NAZCA: Carretera al sur.",
-                "Sobrevuelo de Líneas de Nazca: El Colibrí, Araña, Cóndor, Ballena, Mono y más.",
-                "Explicación según estudios de María Reiche.",
-                "Almuerzo libre en Nazca.",
-                "Visita al Oasis Huacachina con opción a tubulares y sandboarding (adicional)."
-            ],
-            incluye: [
-                "Movilidad turística.",
-                "Seguro contra accidentes (Soat).",
-                "Guía oficial de turismo.",
-                "Sobrevuelo de Líneas de Nazca.",
-                "Tasas turísticas para el sobrevuelo.",
-                "Visita al oasis Huacachina.",
-                "Ingreso a atractivos turísticos.",
-                "Botiquín de primeros auxilios."
-            ],
-            noIncluye: ["Propinas.", "Gastos personales.", "Alimentación."]
-        }
-    },
-    {
-        dias: "Full Day",
-        titulo: "Nazca con Cruz del Sur",
-        slug: "nazca-cruz-del-sur",
-        descripcion:
-            "Viaja en bus Cruz del Sur a Nazca, realiza el sobrevuelo de las famosas líneas y conoce uno de los misterios más grandes del mundo.",
-        etiqueta: "",
-        imagen: "/paquetes-ica/nazca-cruzdelsur.avif",
-        itinerario: {
-            horarios: "HORARIO: De 11:00 PM a 10:00 PM (salida noche anterior)",
-            detalle: [
-                "5:30 AM Llegada a Nazca, traslado al aeródromo y desayuno.",
-                "Sobrevuelo de Líneas de Nazca: Colibrí, Araña, Cóndor, Ballena, Mono, etc.",
-                "Explicación sobre origen y función de los geoglifos.",
-                "Almuerzo libre en Nazca.",
-                "2:00 PM Retorno a Lima en bus Cruz del Sur."
-            ],
-            incluye: [
-                "Boleto de bus Cruz del Sur Lima – Nazca – Lima.",
-                "Transfer In & Out en Nazca.",
-                "Sobrevuelo de Líneas de Nazca.",
-                "Tasas turísticas para el sobrevuelo."
-            ],
-            noIncluye: [
-                "Gastos personales.",
-                "Alimentación.",
-                "Tasas turísticas adicionales (77 soles directo en aeródromo)."
-            ]
-        }
-    },
-    {
-        dias: "2D/1N",
-        titulo: "Paracas + Huacachina + Nazca",
-        slug: "paracas-huacachina-nazca-2d1n",
-        descripcion:
-            "Combina Paracas, Huacachina y el sobrevuelo de las Líneas de Nazca en un paquete completo con transporte, aventura y cultura.",
-        etiqueta: "MÁS VENDIDO",
-        imagen: "/paquetes-ica/paracas-huacachina-nazca.avif",
-        itinerario: {
-            horarios: "HORARIO: Salida 4:30 AM",
-            detalle: [
-                "DÍA 1 – PARACAS + HUACACHINA",
-                "4:30 AM Salida de Lima hacia Paracas.",
-                "9:30 AM Islas Ballestas: Paseo en embarcación.",
-                "1:00 PM Viñedo en Ica: Recorrido y degustación de piscos y vinos.",
-                "3:00 PM Oasis Huacachina: Paseo y deportes de aventura.",
-                "Noche en Nazca – Hotel básico con desayuno.",
-                "DÍA 2 – NAZCA",
-                "10:00 AM Sobrevuelo de Líneas de Nazca.",
-                "Almuerzo por cuenta del pasajero.",
-                "2:00 PM Retorno a Lima en bus Cruz del Sur."
-            ],
-            incluye: [
-                "Movilidad turística Lima - Paracas - Ica – Nazca – Lima.",
-                "Seguro contra accidentes (Soat).",
-                "Guía oficial de turismo.",
-                "Embarcación a Islas Ballestas.",
-                "Visita al viñedo en Ica.",
-                "Degustación de vinos y piscos.",
-                "Visita al Oasis Huacachina.",
-                "Tubulares y sandboarding.",
-                "Boleto de bus Cruz del Sur Ica – Nazca – Lima.",
-                "1 noche en hotel con desayuno.",
-                "Sobrevuelo de Líneas de Nazca.",
-                "Tasas turísticas para sobrevuelo."
-            ],
-            noIncluye: ["Propinas.", "Gastos personales.", "Alimentación."]
-        }
+  {
+    dias: "Full Day",
+    titulo: "Cañón del Colca",
+    slug: "canon-del-colca",
+    descripcion:
+      "Tour al Cañón del Colca desde Arequipa: vive la experiencia de observar el vuelo del cóndor, pueblos andinos y paisajes impresionantes.",
+    etiqueta: "RECOMENDADO",
+    imagen: "/paquetes-arequipa/colca.png",
+    itinerario: {
+      horarios: "HORARIO: 3:30 AM – 05:00 PM",
+      detalle: [
+        "Recojo entre 3:00 a 3:30 AM desde su hospedaje en el centro histórico.",
+        "Traslado a Chivay (3 horas aprox.) y desayuno.",
+        "Visita a la Cruz del Cóndor, observación del vuelo del cóndor.",
+        "Paradas en miradores y pueblos: Antahuilque, Pinchollo, Maca y Yanque.",
+        "Opcional: baños termales o zip line.",
+        "12:00 PM Almuerzo buffet en Chivay.",
+        "Retorno a Arequipa con paradas en Mirador de los Volcanes, Bofedales de Tocra, Pampa Cañahuas.",
+        "Arribo a Arequipa 5:00 PM aprox."
+      ],
+      incluye: [
+        "Recojo del hotel (Centro de Arequipa).",
+        "Guía profesional de turismo.",
+        "Asistencia permanente.",
+        "Desayuno continental.",
+        "Movilidad turística."
+      ],
+      noIncluye: [
+        "Boleto Turístico del Colca (Peruano: S/.40, Extranjero: S/.70, Niños Estudiante: S/.5 - S/.20).",
+        "Ingreso a baños termales (S/.15).",
+        "Regalos y souvenirs.",
+        "Snacks y bebidas.",
+        "Propinas.",
+        "Almuerzo buffet."
+      ]
     }
+  },
+  {
+    dias: "Medio Día",
+    titulo: "Rafting en el Río Chili",
+    slug: "rafting-rio-chili",
+    descripcion:
+      "Disfruta la adrenalina del rafting en el río Chili con rápidos clase II, III y IV, rodeado de paisajes impresionantes.",
+    etiqueta: "",
+    imagen: "/paquetes-arequipa/rafting.png",
+    itinerario: {
+      horarios: "Duración: 3 horas",
+      detalle: [
+        "Recojo en punto de encuentro acordado.",
+        "Traslado al río Chili (20 min).",
+        "Charla de seguridad y entrega de equipos.",
+        "Descenso por rápidos clase II, III y IV.",
+        "Cada balsa cuenta con guía experto y kayakistas de seguridad.",
+        "Observación del cañón del Chili.",
+        "Retorno al punto de partida."
+      ],
+      incluye: [
+        "Transporte en minibus (ida y vuelta).",
+        "Equipo completo de rafting.",
+        "Instructor en español.",
+        "Kayak de seguridad.",
+        "Guía de rafting.",
+        "Recojo del punto acordado."
+      ],
+      noIncluye: [
+        "Fotografías de la experiencia.",
+        "Propinas.",
+        "Gastos extras.",
+        "Snacks.",
+        "Seguro de viaje.",
+        "Comida."
+      ]
+    }
+  },
+  {
+    dias: "Full Day",
+    titulo: "Cataratas de Capua y Aguas Termales",
+    slug: "cataratas-capua",
+    descripcion:
+      "Explora la Catarata de Capua en Yura y relájate en sus aguas termales en un entorno natural único.",
+    etiqueta: "",
+    imagen: "/paquetes-arequipa/capua.png",
+    itinerario: {
+      horarios: "HORARIO: 6:00 AM – 04:00 PM",
+      detalle: [
+        "Recojo desde hotel en Arequipa (centro histórico).",
+        "Traslado hacia Yura.",
+        "Caminata hacia la Catarata de Capua.",
+        "Tiempo libre en la catarata para fotos y descanso.",
+        "Visita a las Aguas Termales de Yura.",
+        "Recorrido por el Centro Histórico de Yura.",
+        "Retorno a Arequipa 4:00 PM aprox."
+      ],
+      incluye: [
+        "Recojo desde hotel en Arequipa.",
+        "Transporte ida y vuelta.",
+        "Guía profesional de turismo.",
+        "Botiquín de primeros auxilios."
+      ],
+      noIncluye: ["Gastos extras.", "Alimentación."]
+    }
+  },
+  {
+    dias: "Full Day",
+    titulo: "Laguna de Salinas",
+    slug: "laguna-de-salinas",
+    descripcion:
+      "Maravíllate con la Laguna de Salinas, espejos de agua y flamencos andinos en este tour natural cerca de Arequipa.",
+    etiqueta: "OFERTA",
+    imagen: "/paquetes-arequipa/salinas.png",
+    itinerario: {
+      horarios: "HORARIO: 6:30 AM – 04:30 PM",
+      detalle: [
+        "Recojo desde hotel (zona céntrica).",
+        "Parada en mirador de volcanes en Chiguata.",
+        "Desayuno en el pueblo de Chiguata.",
+        "Paso por Alto Simbral (4200 m.s.n.m.).",
+        "Visita a la Laguna de Salinas (aves, espejos de agua, extracción de sal).",
+        "Opción de baño en aguas termales de Lojen.",
+        "Opción de visita a laguna Uzuña con kayak y pesca.",
+        "Almuerzo en Chiguata.",
+        "Retorno a Arequipa 5:00 PM aprox."
+      ],
+      incluye: [
+        "Recojo desde hotel.",
+        "Transporte compartido.",
+        "Guía profesional.",
+        "Kit de primeros auxilios."
+      ],
+      noIncluye: [
+        "Alimentación (desayuno y almuerzo).",
+        "Entrada a aguas termales.",
+        "Boleto mini volcán Lojen (S/.5).",
+        "Propinas.",
+        "Gastos extra."
+      ]
+    }
+  },
+  {
+    dias: "Medio Día",
+    titulo: "City Tour Arequipa + Monasterio Santa Catalina",
+    slug: "city-tour-arequipa",
+    descripcion:
+      "Recorre la Plaza de Armas, templos coloniales y culmina con el Monasterio de Santa Catalina, joya de Arequipa.",
+    etiqueta: "MÁS VENDIDO",
+    imagen: "/paquetes-arequipa/citytour.png",
+    itinerario: {
+      horarios: "HORARIO: 9:00 AM – 12:00 PM",
+      detalle: [
+        "Inicio en Plaza de Armas: historia de la Catedral y portales.",
+        "Visita a Iglesia de la Compañía de Jesús.",
+        "Recorrido por los Claustros de la Compañía.",
+        "Visita a Casa Tristán del Pozo.",
+        "Plaza e Iglesia de San Francisco.",
+        "Ingreso al Monasterio de Santa Catalina.",
+        "Retorno al hotel 12:00 PM aprox."
+      ],
+      incluye: [
+        "Recojo desde hotel.",
+        "Guía profesional de turismo.",
+        "Entrada al Monasterio de Santa Catalina."
+      ],
+      noIncluye: ["Alimentación.", "Souvenirs.", "Propinas."]
+    }
+  },
+  {
+    dias: "Medio Día",
+    titulo: "Ruta del Sillar",
+    slug: "ruta-del-sillar",
+    descripcion:
+      "Conoce las canteras de Añashuayco y Culebrillas, el origen del sillar y petroglifos milenarios en un recorrido cultural.",
+    etiqueta: "",
+    imagen: "/paquetes-arequipa/sillar.png",
+    itinerario: {
+      horarios: "HORARIO: 9:00 AM – 1:00 PM",
+      detalle: [
+        "9:00 AM Salida hacia Cantera de Añashuayco (45 min).",
+        "Recorrido por cañón de ignimbrita y megatallado de la Compañía de Jesús.",
+        "Interacción con canteros y demostración de tallado.",
+        "Traslado a Quebrada de Culebrillas (30 min).",
+        "Caminata de 20 min observando petroglifos Wari.",
+        "Retorno a Arequipa 1:00 PM."
+      ],
+      incluye: [
+        "Recojo desde hotel.",
+        "Guía profesional de turismo.",
+        "Transporte turístico."
+      ],
+      noIncluye: [
+        "Entrada Cantera Añashuayco (S/.5).",
+        "Entrada Quebrada Culebrillas (S/.5).",
+        "Alimentación.",
+        "Souvenirs.",
+        "Propinas."
+      ]
+    }
+  }
 ];
