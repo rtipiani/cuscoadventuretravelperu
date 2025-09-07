@@ -25,7 +25,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Conoce lo mejor de Cusco en un solo día: Qoricancha, Sacsayhuamán, Qenqo, Puca Pucara, Tambomachay y mirador del Cristo Blanco.",
         etiqueta: "OFERTA",
-        imagen: "/paquetes-cusco/qoricancha.png",
+        imagen: "/paquetes-cusco/qoricancha.avif",
         itinerario: {
             horarios: "HORARIOS: TURNOS MAÑANA DE 8:50 AM – 2PM , TURNOS TARDE DE 1 PM – 6:00PM",
             detalle:[
@@ -52,7 +52,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Explora Chinchero, Moray, las Salineras de Maras, Urubamba, Ollantaytambo y Pisaq en un recorrido completo por el Valle Sagrado.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/valle-sagrado.png",
+        imagen: "/paquetes-cusco/valle-sagrado.avif",
         itinerario: {
             horarios: "HORARIO: 6:40 AM – 7:00 PM",
             detalle:[
@@ -77,7 +77,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Descubre Pisaq, Ollantaytambo, Chinchero y el Mercado de Corao en un recorrido cultural lleno de historia y tradición andina.",
         etiqueta: "MÁS VENDIDO",
-        imagen: "/paquetes-cusco/pisac.png",
+        imagen: "/paquetes-cusco/pisac.avif",
         itinerario: {
             horarios: "HORARIO: 8:00 AM – 6:30 PM",
             detalle:[
@@ -105,7 +105,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Visita Chinchero, el laboratorio agrícola de Moray y las famosas Salineras de Maras en un full day rodeado de paisajes andinos.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/maras-moray.png",
+        imagen: "/paquetes-cusco/maras-moray.avif",
         itinerario: {
             horarios: "HORARIO: 8:30 AM – 2:30 PM",
             detalle:[
@@ -131,7 +131,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Viaja en tren panorámico, sube en bus Consetur y disfruta de un tour guiado en Machu Picchu, maravilla del mundo moderno.",
         etiqueta: "RECOMENDADO",
-        imagen: "/paquetes-cusco/machu-picchu.png",
+        imagen: "/paquetes-cusco/machu-picchu.avif",
         itinerario: {
             horarios: "Según horario de tren",
             detalle:[
@@ -164,7 +164,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Trekking a la impresionante Montaña de 7 Colores – Vinicunca, rodeada de paisajes altoandinos y glaciares majestuosos.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/montana-colores.png",
+        imagen: "/paquetes-cusco/montana-colores.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 5:00 PM",
             detalle:[
@@ -196,7 +196,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Vive la adrenalina en cuatrimoto hasta la base de la Montaña de Colores y disfruta de un paisaje único a más de 5,000 m.s.n.m.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/montana-colores-cuatrimotos.png",
+        imagen: "/paquetes-cusco/montana-colores-cuatrimotos.avif",
         itinerario: {
             horarios: "HORARIOS DE SALIDA: 3 AM, 4 AM, 6 AM, 8:30 AM, 10 AM",
             detalle:[
@@ -231,7 +231,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Caminata hacia la Laguna Humantay, rodeada de glaciares y con impresionantes vistas del nevado Salkantay en plena cordillera.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/laguna-humantay-trekking.png",
+        imagen: "/paquetes-cusco/laguna-humantay-trekking.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 4:45 PM",
             detalle:[
@@ -259,7 +259,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Conexión espiritual y naturaleza en la Morada de los Dioses, Ciudad de Duendes, Humedal de Huasao y Bosque de los Ents.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/tour-mistico.png",
+        imagen: "/paquetes-cusco/tour-mistico.avif",
         itinerario: {
             horarios: "HORARIO: 7:00 AM – 3:30 PM",
             detalle:[
@@ -289,7 +289,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Explora el Valle Sur con visitas a Tipón, Pikillacta y la Capilla Sixtina de Andahuaylillas en un recorrido lleno de cultura.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/tipon.png",
+        imagen: "/paquetes-cusco/tipon.avif",
         itinerario: {
             horarios: "HORARIO: 9:00 AM – 3:30 PM",
             detalle:[
@@ -317,7 +317,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Disfruta de un recorrido panorámico en bus escénico por Cusco con danzas en vivo, cultura y experiencias interactivas.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/bus-180-grados.png",
+        imagen: "/paquetes-cusco/bus-180-grados.avif",
         itinerario: {
             horarios: "HORARIO: 2:00 PM – 6:10 PM",
             detalle:[
@@ -344,7 +344,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Aventura en cuatrimoto hasta la Morada de los Dioses, un espacio sagrado con esculturas talladas en piedra y paisajes únicos.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/morada-de-los-dioses.png",
+        imagen: "/paquetes-cusco/morada-de-los-dioses.avif",
         itinerario: {
             horarios: "SALIDAS: 9 AM, 11 AM, 2 PM, 3 PM",
             detalle:[
@@ -373,7 +373,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Recorre en cuatrimoto los paisajes del Valle Sagrado, visitando Moray y las impresionantes Salineras de Maras en media jornada.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/maras-moray-cuatrimoto.png",
+        imagen: "/paquetes-cusco/maras-moray-cuatrimoto.avif",
         itinerario: {
             horarios: "HORARIOS: TURNOS MAÑANA DE 6:50 AM – 1PM , TURNOS TARDE DE 1 PM – 6:30PM",
             detalle:[
@@ -402,7 +402,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Visita el puente colgante inca de Q’eswachaka y disfruta del circuito de 4 lagunas rodeado de paisajes andinos únicos.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/puente-qeswachaca.png",
+        imagen: "/paquetes-cusco/puente-qeswachaca.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 5:30 PM",
             detalle:[
@@ -430,7 +430,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Trekking por el circuito de 7 lagunas al pie del nevado Ausangate, rodeado de montañas nevadas y relajantes aguas termales.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/7-lagunas-ausangate.png",
+        imagen: "/paquetes-cusco/7-lagunas-ausangate.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 6:40 PM",
             detalle: [
@@ -458,7 +458,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Aventura de trekking hacia Waqrapukara, la imponente fortaleza inca con forma de cuernos y vistas espectaculares.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/waqrapukara.png",
+        imagen: "/paquetes-cusco/waqrapukara.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM A 06:00 PM",
             detalle:[

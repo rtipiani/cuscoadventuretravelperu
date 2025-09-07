@@ -6,12 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "convert:avif": "node convert-avif.js",
+    "clean:images": "node remove-old-images.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.9",
+    "sharp": "^0.34.3",
     "tailwindcss": "^4.1.11"
   }
 }
