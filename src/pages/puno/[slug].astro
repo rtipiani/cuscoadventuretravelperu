@@ -1,0 +1,103 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { paquetes } from "../../data/paquetes-puno";
+
+export async function getStaticPaths() {
+    return paquetes.map((p) => ({
+        params: { slug: p.slug },
+        props: { paquete: p },
+    }));
+}
+
+const { paquete } = Astro.props;
+---
+
+<Layout>
+    <!-- HERO DINÁMICO -->
+    <section class="relative">
+        <div class="relative h-[70vh] md:h-[80vh] rounded-b-3xl overflow-hidden shadow-lg">
+            <img src={paquete.imagen} alt={paquete.titulo} class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <h1 class="font-extrabold text-white drop-shadow-lg text-[clamp(1.8rem,4vw,3.2rem)]">
+                    {paquete.titulo}
+                </h1>
+                <p class="mt-3 text-white/80 max-w-2xl text-[clamp(0.9rem,2vw,1.2rem)]">
+                    {paquete.descripcion}
+                </p>
+                <div class="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                    <a href={`https://wa.me/51973291892?text=${encodeURIComponent(`Hola, estoy interesado en el tour ${paquete.titulo}`)}`} target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white/90 text-green-800 px-6 py-3 rounded-xl shadow hover:bg-white transition">
+                        Reservar ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DEL ITINERARIO -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            {paquete.itinerario ? (
+                <div class="bg-white shadow rounded-lg p-6 space-y-6">
+                    <h2 class="text-2xl font-bold text-green-800">Itinerario Completo</h2>
+
+                    <!-- Horarios -->
+                    <p class="text-gray-700 font-medium">{paquete.itinerario.horarios}</p>
+
+                    <!-- Detalle con párrafos separados -->
+                    <div class="space-y-4">
+                        {Array.isArray(paquete.itinerario.detalle) ? (
+                            paquete.itinerario.detalle.map((parrafo) => {
+                                // Detecta si el párrafo empieza con "DÍA X"
+                                const match = parrafo.match(/^(DÍA\s+\d+\s*–?\s*.*)$/i);
+                                if (match) {
+                                    return (
+                                        <p class="text-gray-700 leading-relaxed">
+                                            <strong class="font-semibold text-green-800">{match[1]}</strong>
+                                        </p>
+                                    );
+                                }
+
+                                // Si no es un "DÍA", mostrar normal
+                                return <p class="text-gray-700 leading-relaxed">{parrafo}</p>;
+                            })
+                        ) : (
+                            <p class="text-gray-700 leading-relaxed">{paquete.itinerario.detalle}</p>
+                        )}
+                    </div>
+
+                    <!-- Incluye -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-green-700 mb-2">Incluye</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            {paquete.itinerario.incluye.map((item) => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <!-- No Incluye -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-red-700 mb-2">No Incluye</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            {paquete.itinerario.noIncluye.map((item) => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ) : (
+                <p class="text-gray-600">
+                    Este tour no tiene un itinerario detallado disponible en este momento.
+                </p>
+            )}
+
+            <!-- Botón volver -->
+            <div class="mt-12 text-center">
+                <a href="/puno" class="inline-block bg-green-800 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver a Tours
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
