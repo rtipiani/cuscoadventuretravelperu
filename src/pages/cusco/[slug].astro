@@ -48,7 +48,7 @@ const { paquete } = Astro.props;
                     <div class="space-y-4">
                         {Array.isArray(paquete.itinerario.detalle) ? (
                             paquete.itinerario.detalle.map((parrafo) => (
-                            <p class="text-gray-700 leading-relaxed">{parrafo}</p>
+                            <p class="text-gray-700 leading-relaxed text-justify">{parrafo}</p>
                         ))
                         ) : (
                             <p class="text-gray-700 leading-relaxed">
@@ -58,24 +58,40 @@ const { paquete } = Astro.props;
                     </div>
 
                     <!-- Incluye -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-green-700 mb-2">Incluye</h3>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            {paquete.itinerario.incluye.map((item) => (
-                                <li>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    {paquete.itinerario.incluye && (
+                        <div class="bg-gray-50 p-6 rounded-xl border border-green-200 shadow-md">
+                            <h3 class="text-xl font-semibold text-green-800 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-600"></i>
+                                Incluye
+                            </h3>
+                            <ul class="mt-4 space-y-2 text-gray-700">
+                                {paquete.itinerario.incluye.map((item) => (
+                                    <li class="flex items-start gap-2 text-base">
+                                        <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <!-- No Incluye -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-red-700 mb-2">No Incluye</h3>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            {paquete.itinerario.noIncluye.map((item) => (
-                                <li>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    {paquete.itinerario.noIncluye && (
+                        <div class="bg-gray-50 p-6 rounded-xl border border-red-200 shadow-md">
+                            <h3 class="text-xl font-semibold text-red-800 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-xmark text-red-600"></i>
+                                No Incluye
+                            </h3>
+                            <ul class="mt-4 space-y-2 text-gray-700">
+                                {paquete.itinerario.noIncluye.map((item) => (
+                                    <li class="flex items-start gap-2 text-base">
+                                        <i class="fa-solid fa-xmark text-red-600 mt-1"></i>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             ) : (
                 <p class="text-gray-600">

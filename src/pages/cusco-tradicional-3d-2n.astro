@@ -3,17 +3,17 @@ import Layout from "../layouts/Layout.astro";
 
 const plan = {
     titulo: "Cusco Maravilloso 3D/2N",
-    imagen: "/bg-cusco-maravilloso-3d2n.png",
+    imagen: "/bg-cusco-maravilloso-3d2n.avif",
 };
 
 const itinerario = [
     {
         dia: "CITY TOUR",
         titulo: "¡Bienvenida al Cusco!",
+        // Los primeros párrafos se mostrarán como descripción principal
         descripcion: [
-            `Recepción en el aeropuerto o terminal terrestre A su llegada, nuestro personal lo estará esperando con un letrero de la empresa. El transfer, debidamente identificado con su credencial, le dará una breve explicación del programa mientras lo trasladamos al hotel. Al llegar, será recibido con un tradicional mate de coca mientras realizamos el check-in y lo acompañamos a su habitación para su acomodación.`,
-            `Primer Tour – City Tour Arqueológico (Medio Día) Por la tarde iniciaremos nuestro primer recorrido. La movilidad turística pasará por su hotel para visitar los cinco complejos arqueológicos más importantes de Cusco. Este tour tiene una duración aproximada de cinco horas e incluye:`,
-            `Finalmente, retornaremos a la Plaza de Armas del Cusco, donde concluirá el recorrido.`
+            `Recepción en el aeropuerto o terminal terrestre. A su llegada, nuestro personal lo estará esperando con un letrero de la empresa. El transfer, debidamente identificado con su credencial, le dará una breve explicación del programa mientras lo trasladamos al hotel. Al llegar, será recibido con un tradicional mate de coca mientras realizamos el check-in y lo acompañamos a su habitación para su acomodación.`,
+            `Primer Tour – City Tour Arqueológico (Medio Día). Por la tarde iniciaremos nuestro primer recorrido. La movilidad turística pasará por su hotel para visitar los cinco complejos arqueológicos más importantes de Cusco. Este tour tiene una duración aproximada de cinco horas e incluye:`
         ],
         atractivos: [
             { nombre: "Qoricancha (Templo del Sol)", descripcion: "principal centro religioso inca." },
@@ -22,6 +22,8 @@ const itinerario = [
             { nombre: "Puka Pukara", descripcion: "antiguo centro militar y de control." },
             { nombre: "Tambomachay", descripcion: "conocido como el Templo del Agua, dedicado al culto al líquido vital." }
         ],
+        // Separa el párrafo "Finalmente, ..." para mostrarlo después de atractivos
+        descripcionFinal: `Finalmente, retornaremos a la Plaza de Armas del Cusco, donde concluirá el recorrido.`,
         incluye: [
             "Recepción en aeropuerto Jorge Chávez o terminal terrestre",
             "Traslado al hotel y asistencia en el check-in (11:00 am)",
@@ -41,7 +43,7 @@ const itinerario = [
             "Lentes de sol",
             "Bloqueador solar"
         ],
-        imagen: "/cusco/qenqo.png"
+        imagen: "/cusco/qenqo.avif"
     },
     {
         dia: "TOUR A MACHU PICCHU DESDE CUSCO",
@@ -51,7 +53,8 @@ const itinerario = [
             `En Aguas Calientes podrá recorrer atractivos como el mercado artesanal, aguas termales, el mariposario y el Museo de Sitio de Machu Picchu antes de iniciar la visita guiada.`,
             `Nuestro guía lo acompañará en un recorrido de 2 a 3 horas dentro de Machu Picchu, descubriendo sus principales templos, andenes y la clásica vista panorámica desde la parte alta de la ciudadela. Después de la experiencia, descenderemos en bus hacia Aguas Calientes y finalmente retornaremos en tren a Ollantaytambo y en movilidad turística hacia Cusco.`,
             `🏔️ Circuitos y Rutas Disponibles en Machu Picchu: Actualmente, Machu Picchu cuenta con 3 tipos de circuitos oficiales, cada uno con rutas diferentes para que vivas la experiencia según tu preferencia. Los cupos son limitados y se agotan rápido, por lo que te recomendamos reservar con anticipación.`
-        ],circuitos: [
+        ],
+        circuitos: [
             {
                 nombre: "Circuito 1 – Panorámico",
                 descripcion: "Perfecto para quienes buscan vistas espectaculares y paisajes inolvidables.",
@@ -88,7 +91,7 @@ const itinerario = [
             "Poncho de lluvia y repelente",
             "Dinero extra en soles"
         ],
-        imagen: "/cusco/machu-picchu.png"
+        imagen: "/cusco/machu-picchu.avif"
     },
     {
         dia: "DÍA LIBRE + TRASLADO AL AEROPUERTO",
@@ -102,7 +105,7 @@ const itinerario = [
             "Comprar souvenirs con anticipación",
             "Mantener a la mano su DNI o pasaporte"
         ],
-        imagen: "/cusco/dia-libre-cusco.png",
+        imagen: "/cusco/dia-libre-cusco.avif",
     }
 ];
 ---
@@ -146,7 +149,7 @@ const itinerario = [
                 </div>
 
                 <!-- Descripción -->
-                <div class="p-6 text-gray-700 leading-relaxed space-y-4">
+                <div class="p-6 text-gray-700 leading-relaxed space-y-4 text-justify">
                     <p>
                         ¿Tienes pocos días de viaje? Este paquete Cusco 3 días y 2 noches está diseñado para que disfrutes lo esencial del Imperio Inca de forma cómoda, completa y sin complicaciones. En tu primer día conocerás la mágica ciudad de Cusco con un City Tour que incluye templos ancestrales, calles coloniales y sitios arqueológicos como Sacsayhuamán y Qoricancha.
                     </p>
@@ -322,7 +325,7 @@ const itinerario = [
 
                             <!-- Descripción -->
                             {item.descripcion && (
-                                <div class="space-y-4 text-gray-600 leading-relaxed">
+                                <div class="space-y-4 text-gray-600 leading-relaxed text-justify">
                                     {item.descripcion.map((parrafo) => (
                                         <p>{parrafo}</p>
                                     ))}
@@ -338,6 +341,13 @@ const itinerario = [
                                         </li>
                                     ))}
                                 </ul>
+                            )}
+
+                            <!-- Mostrar la descripción final (si existe) -->
+                            {item.descripcionFinal && (
+                                <div class="mt-4 text-gray-600 leading-relaxed text-justify">
+                                    <p>{item.descripcionFinal}</p>
+                                </div>
                             )}
 
                             <!-- Circuitos (solo Machu Picchu) -->
@@ -359,18 +369,18 @@ const itinerario = [
                             )}
 
                             <!-- Incluye y No incluye -->
-                            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 mt-8">
+                            <div class="mt-8 space-y-8">
                                 {item.incluye && (
-                                    <div class="p-4 sm:p-6 rounded-xl border border-green-200 bg-gradient-to-br from-slate-50 to-slate-50/60 shadow-sm">
-                                        <h4 class="font-semibold text-green-700 flex items-center gap-2 text-base sm:text-lg">
+                                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-md">
+                                        <h4 class="font-semibold text-green-800 flex items-center gap-2 text-lg">
                                             <i class="fa-solid fa-circle-check text-green-600"></i>
                                             Incluye
                                         </h4>
-                                        <ul class="mt-3 space-y-2">
+                                        <ul class="mt-4 space-y-2 text-gray-700">
                                             {item.incluye.map((i) => (
-                                                <li class="flex items-start gap-2 text-sm sm:text-base">
+                                                <li class="flex items-start gap-2 text-base">
                                                     <i class="fa-solid fa-check text-green-600 mt-1"></i>
-                                                    <span class="text-gray-700">{i}</span>
+                                                    <span>{i}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -378,16 +388,16 @@ const itinerario = [
                                 )}
 
                                 {item.noIncluye && (
-                                    <div class="p-4 sm:p-6 rounded-xl border border-red-200 bg-gradient-to-br from-slate-50 to-slate-100/60 shadow-sm">
-                                        <h4 class="font-semibold text-red-700 flex items-center gap-2 text-base sm:text-lg">
+                                    <div class="bg-gray-50 p-6 rounded-xl border border-red-200 shadow-md">
+                                        <h4 class="font-semibold text-red-800 flex items-center gap-2 text-lg">
                                             <i class="fa-solid fa-circle-xmark text-red-600"></i>
                                             No Incluye
                                         </h4>
-                                        <ul class="mt-3 space-y-2">
+                                        <ul class="mt-4 space-y-2 text-gray-700">
                                             {item.noIncluye.map((n) => (
-                                                <li class="flex items-start gap-2 text-sm sm:text-base">
+                                                <li class="flex items-start gap-2 text-base">
                                                     <i class="fa-solid fa-xmark text-red-600 mt-1"></i>
-                                                    <span class="text-gray-700">{n}</span>
+                                                    <span>{n}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -397,16 +407,16 @@ const itinerario = [
 
                             <!-- Recomendaciones -->
                             {item.recomendaciones && (
-                                <div class="mt-8 p-4 sm:p-6 rounded-xl border border-gray-200 bg-gradient-to-br from-slate-50 to-slate-100/60 shadow-sm">
-                                    <h4 class="font-semibold text-yellow-700 flex items-center gap-2 text-base sm:text-lg">
+                                <div class="mt-8 bg-gray-50 p-6 rounded-xl border border-yellow-200 shadow-md">
+                                    <h4 class="font-semibold text-yellow-800 flex items-center gap-2 text-lg">
                                         <i class="fa-solid fa-lightbulb text-yellow-500"></i>
                                         Recomendaciones
                                     </h4>
-                                    <ul class="mt-3 space-y-2">
+                                    <ul class="mt-4 space-y-2 text-gray-700">
                                         {item.recomendaciones.map((rec) => (
-                                            <li class="flex items-start gap-2 text-sm sm:text-base">
+                                            <li class="flex items-start gap-2 text-base">
                                                 <i class="fa-regular fa-circle-check text-yellow-500 mt-1"></i>
-                                                <span class="text-gray-700">{rec}</span>
+                                                <span>{rec}</span>
                                             </li>
                                         ))}
                                     </ul>
