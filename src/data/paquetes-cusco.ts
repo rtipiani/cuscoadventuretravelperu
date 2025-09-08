@@ -126,7 +126,7 @@ export const paquetes: Paquete[] = [
     },
     {
         dias: "Full Day",
-        titulo: "MACHU PICCHU FULL DAY",
+        titulo: "MACHU PICCHU",
         slug: "machu-picchu-full-day",
         descripcion:
             "Viaja en tren panorámico, sube en bus Consetur y disfruta de un tour guiado en Machu Picchu, maravilla del mundo moderno.",
