@@ -1,40 +1,69 @@
 ---
 const paquetesNacionales = [
     {
-        dias: "Ica 5D/4N",
-        titulo: "ICA",
-        descripcion: "Sobrevuelo de las Líneas de Nazca, Islas Ballestas, Tubulares",
+        dias: "Full day",
+        titulo: "Paracas + Huacachina",
+        descripcion: "Explora las Islas Ballestas y relájate en el oasis de Huacachina",
         etiqueta: "MÁS VENDIDO",
         imagen: "./Tubulares-huacachina-ica.avif",
+        url: "/ica",
     },
     {
-        dias: "Arequipa 5D/4N",
-        titulo: "AREQUIPA",
-        descripcion: "Ruta del Sillar, Cataratas de Pillones, Reserva de Salinas, Cañón del Colca",
+        dias: "Full day",
+        titulo: "Machu Picchu",
+        descripcion: "Descubre la maravilla Inca de Machupicchu, un viaje fascinante a la historia y cultura ancestral.",
         etiqueta: "MÁS VENDIDO",
-        imagen: "./colca-arequipa-peru.avif",
+        imagen: "./machupicchu-cusco.avif",
+        url: "/cusco",
     },
     {
-        dias: "Lima 5D/4N",
-        titulo: "LIMA",
+        dias: "Full day",
+        titulo: "City Tour Lima",
         descripcion: "Parque de las Aguas, Museo Larco Herrera, Ruinas de Pachacamac",
         etiqueta: "",
         imagen: "./parque-de-las-aguas-lima-peru.avif",
+        url: "/lima",
     },
     {
-        dias: "Puno 4D/3N",
-        titulo: "PUNO",
-        descripcion: "Lago Titicaca, Isla de los Uros, Taquile",
+        dias: "Full day",
+        titulo: "Uros + Taquile",
+        descripcion: "Descubre la cultura viva de los Uros y la belleza tradicional de Taquile en el majestuoso Lago Titicaca",
         etiqueta: "MÁS VENDIDO",
-        imagen: "./isla-de-los-uros-puno.avif",
+        imagen: "./uros-taquile.avif",
+        url: "/puno",
     },
     {
-        dias: "Cusco 6D/5N",
-        titulo: "CUSCO EXTRAORDINARIO",
-        descripcion: "Descubre la 7ma maravilla del Mundo",
+        dias: "Full day",
+        titulo: "Cañón del Colca",
+        descripcion: "Explora el esplendor del Cañón del Colca, un destino natural y cultural de vistas impresionantes.",
         etiqueta: "",
-        imagen: "./inti-raymi-cusco-peru-festividad.avif",
+        imagen: "./canon-del-colca.avif",
+        url: "/arequipa",
     },
+    {
+        dias: "Full day",
+        titulo: "Lago Sandoval",
+        descripcion: "Descubre la magia del Lago Sandoval, un oasis natural rodeado de exuberante vegetación y tranquilidad incomparable.",
+        etiqueta: "",
+        imagen: "./lago-sandoval.avif",
+        url: "/puerto-maldonado",
+    },
+    {
+        dias: "Full day",
+        titulo: "Valle Sagrado + Maras y Moray",
+        descripcion: "Explora la riqueza del Valle Sagrado, admira las estructuras circulares de Moray y descubre las salinas ancestrales de Maras en una experiencia cultural única.",
+        etiqueta: "",
+        imagen: "./valle-sagrado.avif",
+        url: "/cusco",
+    },
+    {
+        dias: "Full day",
+        titulo: "Montaña de Colores en Cuatrimotos",
+        descripcion: "Disfruta de una aventura única recorriendo las vibrantes montañas de colores en cuatrimoto, para vivir una experiencia llena de adrenalina y paisajes inolvidables.",
+        etiqueta: "",
+        imagen: "./montana-de-colores-cuatrimotos.avif",
+        url: "/cusco",
+    }
 ];
 ---
 <section class="py-20 bg-gray-50">
@@ -73,9 +102,8 @@ const paquetesNacionales = [
                         </div>
 
                         <div class="mt-6">
-                            <a href={whatsappLink} target="_blank" class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-4 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
-                                <i class="fab fa-whatsapp mr-2"></i>
-                                Consultar Ahora
+                            <a href={p.url} class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-4 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
+                                Ver paquetes
                             </a>
                         </div>
                     </div>

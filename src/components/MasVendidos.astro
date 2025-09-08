@@ -6,6 +6,7 @@ const paquetes = [
         descripcion: "City Tour, Machupicchu",
         etiqueta: "OFERTA",
         imagen: "./Qoricancha1.avif",
+        url: "cusco-tradicional-3d-2n"
     },
     {
         dias: "Cusco 6D/5N",
@@ -13,6 +14,7 @@ const paquetes = [
         descripcion: "City Tour, Valle Sagrado, Maras & Moray, Machupicchu, Montaña de 7 Colores, Laguna Humantay",
         etiqueta: "MÁS VENDIDO",
         imagen: "./Machupicchu-maravilla-del-mundo.avif",
+        url: "cusco-maravilloso-6d-5n"
     },
     {
         dias: "Cusco 4D/3N",
@@ -20,6 +22,7 @@ const paquetes = [
         descripcion: "City Tour, Valle Sagrado, Maras & Moray, Machupicchu",
         etiqueta: "MÁS VENDIDO",
         imagen: "./montana-de-colores-vinincunca-cusco.avif",
+        url: "cusco-sagrado-4d-3n"
     },
     {
         dias: "Cusco 7D/6N",
@@ -27,6 +30,7 @@ const paquetes = [
         descripcion: "City Tour, Valle Sagrado, Maras & Moray, Machupicchu, Montaña de 7 Colores, Laguna Humantay, Valle Sur",
         etiqueta: "",
         imagen: "./Laguna-Humantay-cusco.avif",
+        url: "cusco-sorprendente-7d-6n"
     },
     {
         dias: "Cusco 5D/4N",
@@ -34,6 +38,7 @@ const paquetes = [
         descripcion: "City Tour, Valle Sagrado, Maras & Moray, Machupicchu, Montaña de 7 Colores",
         etiqueta: "MÁS VENDIDO",
         imagen: "./Tambomachay-city-tour.avif",
+        url: "cusco-increible-5d-4n"
     },
     {
         dias: "Cusco 8D/7N",
@@ -41,26 +46,22 @@ const paquetes = [
         descripcion: "City Tour, Valle Sagrado, Maras & Moray, Machupicchu, Montaña de 7 Colores, Laguna Humantay, Valle Sur, Morada",
         etiqueta: "MÁS VENDIDO",
         imagen: "./Morada-de-los-Dioses-cusco.avif",
+        url: "cusco-extraordinario-8d-7n"
     }
 ];
 ---
 <section class="py-20 bg-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-        <!-- Título principal -->
         <h2 class="font-extrabold text-gray-900 mb-6 text-[clamp(1.6rem,3vw,2rem)]">
             Paquetes Vacacionales Exclusivos en Cusco
         </h2>
 
-        <!-- Subtítulo -->
         <p class="text-gray-700 mb-12 leading-relaxed text-[clamp(0.9rem,1.6vw,1rem)] max-w-3xl mx-auto">
             Descubre la magia de Cusco con nuestros paquetes personalizados. Explora sitios arqueológicos impresionantes como Machu Picchu, vive las tradiciones incaicas y disfruta de la exquisita gastronomía peruana. ¡Una experiencia inolvidable te espera!
         </p>
 
-        <!-- Grid de paquetes -->
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {paquetes.map((p) => {
-                const whatsappLink = `https://wa.me/51973291892?text=Hola,%20quiero%20más%20información%20sobre%20el%20paquete%20${encodeURIComponent(p.titulo)}%20(${encodeURIComponent(p.dias)})`;
-
                 return (
                     <div class="relative bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl transition-transform transform hover:scale-105">
                         {p.etiqueta && (
@@ -82,9 +83,8 @@ const paquetes = [
                         </div>
 
                         <div class="mt-6">
-                            <a href={whatsappLink} target="_blank" class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-5 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
-                                <i class="fab fa-whatsapp mr-2"></i>
-                                Consultar Ahora
+                            <a href={`/${p.url}`} class="inline-flex items-center justify-center bg-[#19470c] text-white py-2 px-5 rounded-md font-medium text-[clamp(0.85rem,1.5vw,0.95rem)] hover:bg-[#64a323] transition">
+                                Ver Itinerario
                             </a>
                         </div>
                     </div>

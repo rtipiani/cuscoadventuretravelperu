@@ -54,7 +54,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Explora el santuario de Pachacamac con sus templos y museo de sitio, y disfruta de Barranco con el Puente de los Suspiros, la Plazuela Chabuca Granda y el Mirador Catalina Recavarren.",
         etiqueta: "",
-        imagen: "/paquetes-lima/pachacamac-barranco.avif",
+        imagen: "/paquetes-lima/barranco.avif",
         itinerario: {
             horarios: "HORARIOS: TURNOS MAÑANA DE 9 AM – 1PM , TURNOS TARDE DE 2 AM – 6PM",
             detalle:[
@@ -85,7 +85,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Vive el espectáculo nocturno del Parque de la Reserva: trece fuentes cibernéticas, música, luces láser e imágenes del Perú que convierten la noche limeña en pura magia y fantasía.",
         etiqueta: "MÁS VENDIDO",
-        imagen: "/paquetes-lima/circuito-de-agua.avif",
+        imagen: "/paquetes-lima/circuito-magico-del-agua.avif",
         itinerario: {
             horarios: "HORARIOS: TURNOS MAÑANA DE 9 AM – 1PM , TURNOS TARDE DE 2 AM – 6PM",
             detalle:[

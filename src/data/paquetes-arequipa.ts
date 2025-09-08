@@ -25,7 +25,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Tour al Cañón del Colca desde Arequipa: vive la experiencia de observar el vuelo del cóndor, pueblos andinos y paisajes impresionantes.",
     etiqueta: "RECOMENDADO",
-    imagen: "/paquetes-arequipa/colca.avif",
+    imagen: "/paquetes-arequipa/canon-del-colca.avif",
     itinerario: {
       horarios: "HORARIO: 3:30 AM – 05:00 PM",
       detalle: [
@@ -99,7 +99,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Explora la Catarata de Capua en Yura y relájate en sus aguas termales en un entorno natural único.",
     etiqueta: "",
-    imagen: "/paquetes-arequipa/capua.avif",
+    imagen: "/paquetes-arequipa/aguas-termales.avif",
     itinerario: {
       horarios: "HORARIO: 6:00 AM – 04:00 PM",
       detalle: [
@@ -127,7 +127,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Maravíllate con la Laguna de Salinas, espejos de agua y flamencos andinos en este tour natural cerca de Arequipa.",
     etiqueta: "OFERTA",
-    imagen: "/paquetes-arequipa/salinas.avif",
+    imagen: "/paquetes-arequipa/laguna-de-salinas.avif",
     itinerario: {
       horarios: "HORARIO: 6:30 AM – 04:30 PM",
       detalle: [
@@ -163,7 +163,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Recorre la Plaza de Armas, templos coloniales y culmina con el Monasterio de Santa Catalina, joya de Arequipa.",
     etiqueta: "MÁS VENDIDO",
-    imagen: "/paquetes-arequipa/citytour.avif",
+    imagen: "/paquetes-arequipa/monasterio-santa-catalina.avif",
     itinerario: {
       horarios: "HORARIO: 9:00 AM – 12:00 PM",
       detalle: [
@@ -190,7 +190,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Conoce las canteras de Añashuayco y Culebrillas, el origen del sillar y petroglifos milenarios en un recorrido cultural.",
     etiqueta: "",
-    imagen: "/paquetes-arequipa/sillar.avif",
+    imagen: "/paquetes-arequipa/ruta-del-sillar.avif",
     itinerario: {
       horarios: "HORARIO: 9:00 AM – 1:00 PM",
       detalle: [

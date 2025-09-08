@@ -77,7 +77,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Descubre Pisaq, Ollantaytambo, Chinchero y el Mercado de Corao en un recorrido cultural lleno de historia y tradición andina.",
         etiqueta: "MÁS VENDIDO",
-        imagen: "/paquetes-cusco/pisac.avif",
+        imagen: "/paquetes-cusco/valle-sagrado-tradicional.avif",
         itinerario: {
             horarios: "HORARIO: 8:00 AM – 6:30 PM",
             detalle:[
@@ -164,7 +164,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Trekking a la impresionante Montaña de 7 Colores – Vinicunca, rodeada de paisajes altoandinos y glaciares majestuosos.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/montana-colores.avif",
+        imagen: "/paquetes-cusco/trekking-vinicunca.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 5:00 PM",
             detalle:[
@@ -196,7 +196,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Vive la adrenalina en cuatrimoto hasta la base de la Montaña de Colores y disfruta de un paisaje único a más de 5,000 m.s.n.m.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/montana-colores-cuatrimotos.avif",
+        imagen: "/paquetes-cusco/cuatrimoto-en-motana-vinicunca.avif",
         itinerario: {
             horarios: "HORARIOS DE SALIDA: 3 AM, 4 AM, 6 AM, 8:30 AM, 10 AM",
             detalle:[
@@ -231,7 +231,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Caminata hacia la Laguna Humantay, rodeada de glaciares y con impresionantes vistas del nevado Salkantay en plena cordillera.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/laguna-humantay-trekking.avif",
+        imagen: "/paquetes-cusco/trekking-laguna-humantay.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 4:45 PM",
             detalle:[
@@ -259,7 +259,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Conexión espiritual y naturaleza en la Morada de los Dioses, Ciudad de Duendes, Humedal de Huasao y Bosque de los Ents.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/tour-mistico.avif",
+        imagen: "/paquetes-cusco/humedal-de-huasao.avif",
         itinerario: {
             horarios: "HORARIO: 7:00 AM – 3:30 PM",
             detalle:[
@@ -317,7 +317,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Disfruta de un recorrido panorámico en bus escénico por Cusco con danzas en vivo, cultura y experiencias interactivas.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/bus-180-grados.avif",
+        imagen: "/paquetes-cusco/bus-escenico.avif",
         itinerario: {
             horarios: "HORARIO: 2:00 PM – 6:10 PM",
             detalle:[
@@ -373,7 +373,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Recorre en cuatrimoto los paisajes del Valle Sagrado, visitando Moray y las impresionantes Salineras de Maras en media jornada.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/maras-moray-cuatrimoto.avif",
+        imagen: "/paquetes-cusco/maras-y-moray-en-cuatrimoto.avif",
         itinerario: {
             horarios: "HORARIOS: TURNOS MAÑANA DE 6:50 AM – 1PM , TURNOS TARDE DE 1 PM – 6:30PM",
             detalle:[
@@ -430,7 +430,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Trekking por el circuito de 7 lagunas al pie del nevado Ausangate, rodeado de montañas nevadas y relajantes aguas termales.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/7-lagunas-ausangate.avif",
+        imagen: "/paquetes-cusco/7-lagunas-de-ausangate.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM – 6:40 PM",
             detalle: [
@@ -458,7 +458,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Aventura de trekking hacia Waqrapukara, la imponente fortaleza inca con forma de cuernos y vistas espectaculares.",
         etiqueta: "",
-        imagen: "/paquetes-cusco/waqrapukara.avif",
+        imagen: "/paquetes-cusco/wakrapukara.avif",
         itinerario: {
             horarios: "HORARIO: 4:30 AM A 06:00 PM",
             detalle:[

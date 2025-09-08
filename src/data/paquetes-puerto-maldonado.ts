@@ -20,7 +20,7 @@ export interface Paquete {
 export const paquetes: Paquete[] = [
   {
     dias: "Full Day",
-    titulo: "LAGO SANDOVAL FULL DAY",
+    titulo: "LAGO SANDOVAL",
     slug: "lago-sandoval",
     descripcion:
       "Explora la Reserva Nacional Tambopata navegando por el río Madre de Dios, caminando por la selva y descubriendo el majestuoso Lago Sandoval. Una experiencia única con fauna, flora y un almuerzo amazónico.",
@@ -57,7 +57,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Disfruta de una experiencia única pescando pirañas en el Lago Yacumama, rodeado de aves tropicales, caimanes y un atardecer mágico.",
     etiqueta: "",
-    imagen: "/paquetes-puerto-maldonado/pesca-piranas.avif",
+    imagen: "/paquetes-puerto-maldonado/pesca-de-piranas.avif",
     itinerario: {
       horarios:
         "HORARIOS: Mañana 5:30 AM – 8:30 AM | Tarde 3:30 PM – 6:30 PM",
@@ -89,7 +89,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Visita la collpa de guacamayos más grande del mundo en Tambopata, observando cientos de aves en su hábitat natural y disfrutando de un desayuno tipo camping.",
     etiqueta: "OFERTA",
-    imagen: "/paquetes-puerto-maldonado/collpa-guacamayos.avif",
+    imagen: "/paquetes-puerto-maldonado/collpa-de-guacamayos.avif",
     itinerario: {
       horarios: "HORARIO: 3:30 AM – 04:00 PM",
       detalle: [
@@ -125,7 +125,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Combina aventura y naturaleza con kayak en el río Tambopata, tirolina en la selva y la visita a la famosa Isla de los Monos.",
     etiqueta: "",
-    imagen: "/paquetes-puerto-maldonado/isla-monos.avif",
+    imagen: "/paquetes-puerto-maldonado/isla-de-los-monos.avif",
     itinerario: {
       horarios: "HORARIO: 9:00 AM – 05:30 PM",
       detalle: [
@@ -157,7 +157,7 @@ export const paquetes: Paquete[] = [
     descripcion:
       "Explora la selva amazónica en un tour de 2 días, observando caimanes nocturnos, monos y la impresionante collpa de guacamayos Chuncho.",
     etiqueta: "",
-    imagen: "/paquetes-puerto-maldonado/collpa-chuncho.avif",
+    imagen: "/paquetes-puerto-maldonado/chuncho-de-guacamayos.avif",
     itinerario: {
       horarios: "HORARIO: Día 1 9:30 AM – Día 2 04:00 PM",
       detalle: [

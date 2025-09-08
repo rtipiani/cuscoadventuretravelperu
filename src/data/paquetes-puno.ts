@@ -20,7 +20,7 @@ export interface Paquete {
 export const paquetes: Paquete[] = [
     {
         dias: "Full Day",
-        titulo: "FULL DAY UROS Y TAQUILE",
+        titulo: "UROS Y TAQUILE",
         slug: "uros-y-taquile",
         descripcion:
             "Experimenta un full day excepcional descubriendo la auténtica vida de los Uros en sus islas flotantes y conociendo la rica cultura de Taquile, en un recorrido lleno de historia y paisajes impresionantes.",
@@ -59,7 +59,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Vive una experiencia inolvidable explorando los enigmáticos Uros, descubriendo la auténtica esencia de Taquile y aventurándote al mágico Amantani, en un itinerario de 2 días y 1 noche repleto de emociones.",
         etiqueta: "",
-        imagen: "/paquetes-puno/taquile-amantani.avif",
+        imagen: "/paquetes-puno/amantani.avif",
         itinerario: {
             horarios: "HORARIO: 7:00 AM A 03:30 PM",
             detalle: [

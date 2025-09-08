@@ -20,12 +20,12 @@ export interface Paquete {
 export const paquetes: Paquete[] = [
     {
         dias: "Full Day",
-        titulo: "Paracas + Huacachina Full Day",
+        titulo: "Paracas + Huacachina",
         slug: "paracas-huacachina-full-day",
         descripcion:
             "Visita Paracas con sus Islas Ballestas, disfruta de un viñedo en Ica con degustación, el oasis de Huacachina y la experiencia de tubulares y sandboarding.",
         etiqueta: "OFERTA",
-        imagen: "/paquetes-ica/paracas-huacachina.avif",
+        imagen: "/paquetes-ica/paracas.avif",
         itinerario: {
             horarios: "HORARIO: DE 4:30 AM – 9:20 PM",
             detalle: [
@@ -59,7 +59,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Disfruta de Paracas, las Islas Ballestas, un viñedo en Ica, el oasis de Huacachina con tubulares y sandboarding, más una noche de hotel en Ica.",
         etiqueta: "",
-        imagen: "/paquetes-ica/paracas-huacachina-2d1n.avif",
+        imagen: "/paquetes-ica/paracas-huacachina.avif",
         itinerario: {
             horarios: "Horario de salida: 4:30 AM",
             detalle: [
@@ -127,7 +127,7 @@ export const paquetes: Paquete[] = [
         descripcion:
             "Viaja en bus Cruz del Sur a Nazca, realiza el sobrevuelo de las famosas líneas y conoce uno de los misterios más grandes del mundo.",
         etiqueta: "",
-        imagen: "/paquetes-ica/nazca-cruzdelsur.avif",
+        imagen: "/paquetes-ica/nazca-cruz-del-sur.avif",
         itinerario: {
             horarios: "HORARIO: De 11:00 PM a 10:00 PM (salida noche anterior)",
             detalle: [
