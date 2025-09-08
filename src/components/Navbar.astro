@@ -13,11 +13,11 @@ const menuItems: Record<Lang, MenuItem[]> = {
         {
             label: "Paquetes Cusco / Machu Picchu",
             children: [
-                { label: "Cusco Tradicional 3D/2N", href: "/es/paquetes/cusco-clasico" },
-                { label: "Cusco Sagrado 4D/3N", href: "/es/paquetes/valle-machu" },
-                { label: "Cusco Increíble 5D/4N", href: "/es/paquetes/aventura-cusco" },
-                { label: "Cusco Maravilloso 6D/5N", href: "/es/paquetes/aventura-cusco" },
-                { label: "Cusco Sorprendente 7D/6N", href: "/es/cusco-sorprendente-7d-6n" },
+                { label: "Cusco Tradicional 3D/2N", href: "/cusco-tradicional-3d-2n" },
+                { label: "Cusco Sagrado 4D/3N", href: "/cusco-sagrado-4d-3n" },
+                { label: "Cusco Increíble 5D/4N", href: "/cusco-increible-5d-4n" },
+                { label: "Cusco Maravilloso 6D/5N", href: "/cusco-maravilloso-6d-5n" },
+                { label: "Cusco Sorprendente 7D/6N", href: "/cusco-sorprendente-7d-6n" },
                 { label: "Cusco Extraordinario 8D/7N", href: "/cusco-extraordinario-8d-7n" },
             ],
         },
@@ -88,18 +88,18 @@ const currentLang: Lang = path.startsWith("/en") ? "en" : "es";
 const langToggleHref = computeLangToggleHref(path, currentLang);
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent backdrop-blur-md border-b border-transparent z-50 transition-colors duration-500 ease-in-out">
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-[#64a323]/20 backdrop-blur-md border-b border-[#64a323]/30 z-50 transition-colors duration-500 ease-in-out">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-      
+
             <!-- Logo -->
             <a href={menuItems[currentLang][0].href} class="flex items-center group">
                 <img src="/logo.avif" alt="Cusco Adventure Travel Perú" class="h-12 w-auto transition-transform duration-300 group-hover:scale-105"/>
                 <div class="flex flex-col justify-center leading-none ml-1 logo-text">
-                    <span class="font-bold text-lg sm:text-xl leading-none text-white group-hover:text-[#ff9800] transition-colors">
+                    <span class="font-bold text-lg sm:text-xl leading-none text-[#efe7da] group-hover:text-[#ffc834] transition-colors">
                         Cusco Adventure
                     </span>
-                    <span class="text-sm sm:text-base tracking-wide leading-none text-white group-hover:text-[#ff9800] transition-colors">
+                    <span class="text-sm sm:text-base tracking-wide leading-none text-[#efe7da] group-hover:text-[#ffc834] transition-colors">
                         Travel Peru
                     </span>
                 </div>
@@ -108,25 +108,21 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
             <!-- Menú desktop -->
             <div class="hidden xl:flex items-center space-x-8">
                 {menuItems[currentLang].map(({ label, href, children }) => {
-                    // compute active states
                     const isParentActive = children ? children.some(c => hrefMatches(c.href)) : href && hrefMatches(href);
                     return children ? (
                         <div class="relative group">
-                            <button 
-                              class={`nav-link ${isParentActive ? "nav-active text-[#ff9800] bg-[#ff9800]/10 px-2 py-1 rounded-md" : "hover:text-[#ffc834]"} flex items-center space-x-1 font-semibold tracking-wide transition-all duration-300`}
-                              type="button"
-                            >
+                            <button class={`nav-link ${isParentActive ? "nav-active text-[#ffc834] bg-[#19470c] px-2 py-1 rounded-md" : "hover:text-[#fcd875]"} flex items-center space-x-1 font-semibold tracking-wide transition-all duration-300`} type="button">
                                 <span>{label}</span>
                                 <i class="fas fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
                             </button>
 
-                            <div class="absolute left-0 mt-3 w-60 bg-black/80 backdrop-blur-lg rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-50">
+                            <div class="absolute left-0 mt-3 w-60 bg-[#19470c]/90 backdrop-blur-lg rounded-xl shadow-xl border border-[#64a323]/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-50">
                                 {children.map((sub) => {
                                     const isChildActive = hrefMatches(sub.href);
                                     return (
                                         <a 
                                             href={sub.href} 
-                                            class={`block px-5 py-3 font-medium rounded-lg transition-all duration-200 ${isChildActive ? "bg-gradient-to-r from-[#ff9800]/20 to-[#ff5722]/10 text-white font-bold" : "text-[#efe7da] hover:bg-gradient-to-r hover:from-[#efe7da]/20 hover:to-[#efe7da]/10 hover:text-white"}`}
+                                            class={`block px-5 py-3 font-medium rounded-lg transition-all duration-200 ${isChildActive ? "bg-[#efe7da] text-[#64a323] font-bold" : "text-[#efe7da] hover:bg-[#64a323]/40 hover:text-[#ffc834]"}`}
                                             aria-current={isChildActive ? "page" : null}
                                         >
                                             {sub.label}
@@ -141,7 +137,7 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
                             return (
                                 <a 
                                   href={href} 
-                                  class={`nav-link ${isActive ? "nav-active text-[#ff9800]" : "hover:text-[#ff9800]"} relative font-semibold tracking-wide transition-all duration-300`}
+                                  class={`nav-link ${isActive ? "nav-active text-[#ffc834]" : "hover:text-[#fcd875]"} relative font-semibold tracking-wide transition-all duration-300`}
                                   aria-current={isActive ? "page" : null}
                                 >
                                   {label}
@@ -154,15 +150,15 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
 
             <!-- Acciones (desktop) -->
             <div class="hidden xl:flex items-center space-x-4">
-                <a href={langToggleHref} class="nav-link px-3 py-1 border border-[#efe7da] rounded-lg hover:bg-[#ff9800] hover:text-white transition flex items-center space-x-2 shadow-sm">
+                <a href={langToggleHref} class="nav-link px-3 py-1 border border-[#64a323] rounded-lg hover:bg-[#ffc834] hover:text-[#19470c] transition flex items-center space-x-2 shadow-sm">
                     <img src={currentLang === "es" ? "/flags/eu.avif" : "/flags/pe.avif"} alt={currentLang === "es" ? "English" : "Español"} class="h-5 w-5"/>
                     <span class="font-bold">{currentLang === "es" ? "EN" : "ES"}</span>
                 </a>
             </div>
 
             <!-- Botón menú móvil -->
-            <button id="menu-button" type="button" class="xl:hidden inline-flex items-center justify-center p-2 rounded-md nav-link hover:bg-gray-200 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <button id="menu-button" type="button" class="xl:hidden inline-flex items-center justify-center p-2 rounded-md nav-link hover:bg-[#64a323]/30 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="h-6 w-6 text-[#efe7da]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
                 <span class="sr-only">Abrir menú</span>
@@ -171,13 +167,13 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="hidden xl:hidden flex-col px-4 pb-4 space-y-3 bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-inner text-left">
+    <div id="mobile-menu" class="hidden xl:hidden flex-col px-4 pb-4 space-y-3 bg-[#64a323]/20 backdrop-blur-lg border-t border-[#64a323]/30 shadow-inner text-left">
         {menuItems[currentLang].map(({ label, href, children }) => {
             const isParentActive = children ? children.some(c => hrefMatches(c.href)) : href && hrefMatches(href);
             return children ? (
-                <div class="border-b border-gray-200">
+                <div class="border-b border-[#64a323]/30">
                     <button 
-                      class={`w-full flex justify-between items-center py-3 font-semibold rounded-lg transition-all duration-300 ${isParentActive ? "text-[#ff9800] bg-[#ff9800]/10" : "text-gray-700 hover:text-[#ff9800]"}`}
+                      class={`w-full flex justify-between items-center py-3 font-semibold rounded-lg transition-all duration-300 ${isParentActive ? "text-[#ffc834] bg-[#64a323]/20" : "text-[#efe7da] hover:text-[#ffc834]"}`}
                       onclick="this.querySelector('i').classList.toggle('rotate-180'); this.nextElementSibling.classList.toggle('hidden')"
                       aria-expanded={isParentActive ? "true" : "false"}
                       type="button"
@@ -192,7 +188,7 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
                             return (
                                 <a 
                                   href={sub.href} 
-                                  class={`block py-2 transition ${isChildActive ? "text-[#ff9800] font-bold" : "text-gray-600 hover:text-[#ff9800]"}`}
+                                  class={`block py-2 transition ${isChildActive ? "text-[#ffc834] font-bold" : "text-[#efe7da] hover:text-[#ffc834]"}`}
                                   aria-current={isChildActive ? "page" : null}
                                 >
                                     {sub.label}
@@ -204,7 +200,7 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
             ) : (
                 <a 
                   href={href} 
-                  class={`block py-3 font-semibold border-b transition ${href && hrefMatches(href) ? "text-[#ff9800]" : "text-gray-700 hover:text-[#ff9800]"}`}
+                  class={`block py-3 font-semibold border-b transition ${href && hrefMatches(href) ? "text-[#ffc834]" : "text-[#efe7da] hover:text-[#ffc834]"}`}
                   aria-current={href && hrefMatches(href) ? "page" : null}
                 >
                   {label}
@@ -213,7 +209,7 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
         })}
 
         <!-- Selector idioma móvil -->
-        <a href={langToggleHref} class="mt-3 inline-flex w-max mx-auto items-center space-x-2 px-4 py-2 border border-[#ff9800] rounded-lg hover:bg-[#ff9800] hover:text-white transition-all shadow-sm font-bold">
+        <a href={langToggleHref} class="mt-3 inline-flex w-max mx-auto items-center space-x-2 px-4 py-2 border border-[#64a323] rounded-lg hover:bg-[#64a323] hover:text-[#ffc834] transition-all shadow-sm font-bold">
             <span>{currentLang === "es" ? "🇬🇧" : "🇪🇸"}</span>
             <span>{currentLang === "es" ? "EN" : "ES"}</span>
         </a>
@@ -230,25 +226,29 @@ const langToggleHref = computeLangToggleHref(path, currentLang);
     function updateNavbar() {
         const scrolled = window.scrollY > 50;
 
-        // Fondo
+        // Fondo del navbar
         navbar.classList.toggle("nav-scrolled", scrolled);
 
-        // Colores de links — NO modificar los que ya están activos (nav-active)
+        // Colores de los enlaces (no modificar los activos)
         navLinks.forEach(link => {
-            if (link.classList.contains("nav-active")) return;
+            if (link.classList.contains("nav-active")) return;  // No modificar los enlaces activos
+
+            // Cambio de color de los enlaces según el desplazamiento
             if (scrolled) {
                 link.classList.remove("text-white");
-                link.classList.add("text-gray-800");
+                link.classList.add("text-gray-800"); // Gris oscuro para links
+                link.classList.add("hover:bg-[#fcd875]/20"); // Hover más suave para links
             } else {
                 link.classList.remove("text-gray-800");
-                link.classList.add("text-white");
+                link.classList.add("text-white"); // Blanco para fondo transparente
+                link.classList.add("hover:bg-[#fcd875]/20"); // Hover suave en transparente
             }
         });
 
         // Colores del logo
         logoText.forEach(span => {
-            span.classList.toggle("text-gray-800", scrolled);
-            span.classList.toggle("text-white", !scrolled);
+            span.classList.toggle("text-gray-800", scrolled); // Gris oscuro cuando hace scroll
+            span.classList.toggle("text-white", !scrolled); // Blanco cuando no hace scroll
         });
     }
 
