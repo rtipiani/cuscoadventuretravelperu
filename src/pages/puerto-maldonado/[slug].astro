@@ -48,10 +48,10 @@ const { paquete } = Astro.props;
                     <div class="space-y-4">
                         {Array.isArray(paquete.itinerario.detalle) ? (
                             paquete.itinerario.detalle.map((parrafo) => (
-                            <p class="text-gray-700 leading-relaxed">{parrafo}</p>
+                            <p class="text-gray-700 leading-relaxed text-justify">{parrafo}</p>
                         ))
                         ) : (
-                            <p class="text-gray-700 leading-relaxed">
+                            <p class="text-gray-700 leading-relaxed text-justify">
                                 {paquete.itinerario.detalle}
                             </p>
                         )}

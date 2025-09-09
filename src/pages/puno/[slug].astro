@@ -11,7 +11,6 @@ export async function getStaticPaths() {
 
 const { paquete } = Astro.props;
 ---
-
 <Layout>
     <!-- HERO DINÁMICO -->
     <section class="relative">
@@ -59,10 +58,10 @@ const { paquete } = Astro.props;
                                 }
 
                                 // Si no es un "DÍA", mostrar normal
-                                return <p class="text-gray-700 leading-relaxed">{parrafo}</p>;
+                                return <p class="text-gray-700 leading-relaxed text-justify">{parrafo}</p>;
                             })
                         ) : (
-                            <p class="text-gray-700 leading-relaxed">{paquete.itinerario.detalle}</p>
+                            <p class="text-gray-700 leading-relaxed text-justify">{paquete.itinerario.detalle}</p>
                         )}
                     </div>
 

@@ -3,18 +3,37 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 ---
+
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Cusco Travel Adventure Perú</title>
+		<style>
+			@keyframes bounce-smooth {
+				0%, 100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-8px);
+				}
+			}
+			.animate-bounce-smooth {
+				animation: bounce-smooth 2s infinite ease-in-out;
+			}
+		</style>
 	</head>
 	<body>
 		<Navbar />
 		<main class="relative">
 			<slot />
 		</main>
+
+		<!-- Botón flotante WhatsApp -->
+		<a href="https://wa.me/51973291892?text=Hola%20Cusco%20Adventure%20Travel%20Per%C3%BA%2C%20estoy%20interesado%20en%20consultar%20sobre%20tus%20paquetes%20de%20turismo.%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full shadow-lg p-4 hover:scale-110 transition-transform duration-300 z-50 animate-bounce-smooth">
+			<i class="fab fa-whatsapp fa-lg"></i>
+		</a>
+		<Footer />
 	</body>
-	<Footer />
 </html>
